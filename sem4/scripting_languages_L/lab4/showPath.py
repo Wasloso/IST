@@ -1,26 +1,24 @@
+import argparse
 import sys
 import os
 
 
-def showPath(option=1):
+def showPath():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--detailed", "-d", action="store_true")
+    args = parser.parse_args()
+
     path = os.environ["PATH"]
     dirs = path.split(os.pathsep)
 
-    ex = sys.argv[1]
-
-    if ex not in ["1", "2"]:
-        raise Exception("No such option")
-
     for dir in dirs:
         sys.stdout.write(f"{dir}")
-        if ex == "2":
+        if args.detailed:
             list = []
-            try:
-                for file in os.listdir(dir):
-                    if os.access(os.path.join(dir, file), os.X_OK):
-                        list.append(file)
-            except:
-                pass
+            for file in os.listdir(dir):
+                if os.access(os.path.join(dir, file), os.X_OK):
+                    list.append(file)
+
             sys.stdout.write(f": {list}")
         sys.stdout.write("\n")
 

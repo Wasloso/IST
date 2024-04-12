@@ -1,19 +1,25 @@
 import sys
 import os
+import argparse
 
 
-def show_env_vars(option=1):
-    vars = sorted(os.environ.items())
-    paramVars = sys.argv[1:]
+def showEnvVars():
+    parser = argparse.ArgumentParser()
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--all", "-a", action="store_true")
+    group.add_argument("--filter", "-f", nargs="+")
+    args = parser.parse_args()
 
-    if paramVars:
-        sys.stdout.write(
-            f"Filtered variables: {[key for key,value in vars if key in paramVars]}"
-        )
-        return
+    vars = sorted(os.environ.keys())
 
-    sys.stdout.write(f"Env variables: {[key for key, value in vars]}\n")
+    if args.all:
+        for var in vars:
+            sys.stdout.write(f"{var}\n")
+    if args.filter:
+        for var in vars:
+            if var in args.filter:
+                sys.stdout.write(f"{var}\n")
 
 
 if __name__ == "__main__":
-    show_env_vars()
+    showEnvVars()

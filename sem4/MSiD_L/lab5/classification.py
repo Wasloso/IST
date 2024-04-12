@@ -7,7 +7,7 @@ def get_confusion_matrix(
     num_classes: int,
 ) -> List[List[int]]:
     """
-    Generate a confusion matrix in a form of a list of lists.
+    Generate a confusion matrix in the form of a list of lists.
 
     :param y_true: a list of ground truth values
     :param y_pred: a list of prediction values
@@ -15,7 +15,19 @@ def get_confusion_matrix(
 
     :return: confusion matrix
     """
-    ...
+    if len(y_true) != len(y_pred):
+        raise ValueError("Invalid input shapes!")
+    if num_classes <= 0:
+        raise ValueError("Invalid number of classes!")
+
+    confusion_matrix = [[0] * num_classes for i in range(num_classes)]
+    for true, pred in zip(y_true, y_pred):
+        if true > num_classes:
+            raise ValueError("Invalid true classes!")
+        if pred > num_classes:
+            raise ValueError("Invalid prediction classes!")
+        confusion_matrix[true][pred] += 1
+    return confusion_matrix
 
 
 def get_quality_factors(
@@ -58,6 +70,12 @@ def accuracy_score(y_true: List[int], y_pred: List[int]) -> float:
 
     :return: accuracy score
     """
+    quality_factors = get_quality_factors(y_true, y_pred)
+    TN, FP, FN, TP = quality_factors
+    if sum(quality_factors) == 0:
+        return 0.0
+    return (TN + TP) / (TN + FP + FN + TP)
+
     ...
 
 
@@ -71,6 +89,8 @@ def precision_score(y_true: List[int], y_pred: List[int]) -> float:
     """
     quality_factors = get_quality_factors(y_true, y_pred)
     TP, FP = quality_factors[3], quality_factors[1]
+    if TP + FP == 0:
+        return 0.0
     return TP / (TP + FP)
     ...
 
@@ -83,7 +103,11 @@ def recall_score(y_true: List[int], y_pred: List[int]) -> float:
 
     :return: recall score
     """
-    ...
+    quality_factors = get_quality_factors(y_true, y_pred)
+    TP, FN = quality_factors[3], quality_factors[2]
+    if TP + FN == 0:
+        return 0.0
+    return TP / (TP + FN)
 
 
 def f1_score(y_true: List[int], y_pred: List[int]) -> float:
@@ -94,4 +118,9 @@ def f1_score(y_true: List[int], y_pred: List[int]) -> float:
 
     :return: F1-score
     """
+    precission = precision_score(y_true, y_pred)
+    recall = recall_score(y_true, y_pred)
+    if not precission or not recall:
+        return 0
+    return 2 * precission * recall / (precission + recall)
     ...
