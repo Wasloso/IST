@@ -13,4 +13,4 @@ def filterByStatusCode(file, code):
 
 
 if __name__ == "__main__":
-    filterByStatusCode(stdManager.getInputFile(), "404")
+    filterByStatusCode(stdManager.getInputFile(), "501")

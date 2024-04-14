@@ -6,7 +6,7 @@ import pytest
 
 
 def is_matrix_square(mat: List[List[int]]) -> bool:
-    return all(len(row) == len(mat) for row in mat)  # all rows must match column length
+    return all(len(row) == len(mat) for row in mat)
 
 
 def get_minor_matrix(mat: List[List[int]], i: int, j: int) -> List[List[int]]:

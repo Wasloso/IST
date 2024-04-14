@@ -70,7 +70,8 @@ def least_squares_solution(
 
     :return: theta matrix of polynomial, shape = (1, polynomial_degree + 1)
     """
-    ...
+    X = np.power(X.reshape(-1, 1), get_polynomial_form(polynomial_degree).flatten())
+    return np.linalg.inv(X.T @ X) @ X.T @ Y.reshape(-1, 1)
 
 
 def generalised_linear_model(X: np.ndarray, T: np.ndarray) -> np.ndarray:
@@ -106,6 +107,6 @@ def visualise_LSS_method(X: np.ndarray, Y: np.ndarray, T: np.ndarray):
 if __name__ == "__main__":
     # here is a playground for your tests!
     X, Y = read_data_vectors()
-    T = least_squares_solution(X, Y, 2)
+    T = least_squares_solution(X, Y, 8)
     print(print_polynomial(T))
     visualise_LSS_method(X, Y, T)

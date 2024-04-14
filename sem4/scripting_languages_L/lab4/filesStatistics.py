@@ -12,7 +12,7 @@ def analyzeFiles():
 
     for file in files:
         details = subprocess.run(
-            ["python3", "fileInfo.py"],
+            ["python", "fileInfo.py"],
             input=f"{dirPath}/{file}\n",
             text=True,
             capture_output=True,

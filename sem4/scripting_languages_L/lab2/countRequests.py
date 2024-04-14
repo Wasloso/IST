@@ -1,4 +1,3 @@
-import sys
 import stdManager
 from extractLogData import logToDict
 

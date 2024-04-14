@@ -22,7 +22,7 @@ def fileInfo():
         output = {}
         content = file.read()
 
-        output["path"] = os.path.abspath(file_path)
+        output["path"] = os.path.abspath(os.path.expanduser(file_path))
         output["characters_count"] = len(content.replace("\n", ""))
         output["words_count"] = len(content.replace("\n", " ").split())
         output["lines_count"] = content.count("\n")

@@ -5,7 +5,7 @@ import argparse
 
 def showEnvVars():
     parser = argparse.ArgumentParser()
-    group = parser.add_mutually_exclusive_group()
+    group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--all", "-a", action="store_true")
     group.add_argument("--filter", "-f", nargs="+")
     args = parser.parse_args()
