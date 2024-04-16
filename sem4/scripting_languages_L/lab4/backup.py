@@ -4,15 +4,20 @@ import subprocess
 from datetime import datetime
 from backup_utils import logToDir, changeBackupDirEnvVar, getFullPath
 import json
-import json
 import sys
 
 
 def backup():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--directory", "-d", default=os.getcwd())
     parser.add_argument(
-        "--backupdir", "-b", required=False, default=os.environ["BACKUP_DIR"]
+        "--directory", "-d", default=os.getcwd(), help="Directory to backup path"
+    )
+    parser.add_argument(
+        "--backupdir",
+        "-b",
+        required=False,
+        default=os.environ["BACKUP_DIR"],
+        help="Backup directory path",
     )
     args = parser.parse_args()
 
