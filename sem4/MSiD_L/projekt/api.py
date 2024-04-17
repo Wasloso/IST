@@ -16,6 +16,7 @@ class api:
             data = json.loads(response.text)
             for entry in data["dimension"][0]["code"]:
                 self.countries[entry["label"]] = entry["display"]
+        return self.countries
 
         with open("data/countries.json", "a+", encoding="utf-8") as f:
             f.truncate(0)
