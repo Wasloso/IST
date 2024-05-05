@@ -51,6 +51,9 @@ if __name__ == "__main__":
         def __init__(self):
             pass
 
+        def make_a(self):
+            return "a"
+
     @log(LOG_LEVEL=logging.CRITICAL)
     class B:
         def __init__(self):

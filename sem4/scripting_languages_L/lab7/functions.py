@@ -57,14 +57,14 @@ def atleast(n, pred, iterable):
             case [h, *t]:
                 return True if count >= n else helper(t, count + (1 if pred(h) else 0))
 
-    return helper(iterable, 0) if n >= 0 else False
+    return helper(iterable, 0) if n >= 0 else True
 
 
 def atmost(n, pred, iterable):
     def helper(iterable, count):
         match iterable:
             case []:
-                return count < n
+                return count <= n
             case [h, *t]:
                 return False if count > n else helper(t, count + (1 if pred(h) else 0))
 
@@ -114,5 +114,5 @@ if __name__ == "__main__":
     print(f"{atleast(3,pred1,iterable1)=}")
     print(f"{atleast(5,pred2,iterable1)=}")
 
-    print(f"{atmost(2,pred1,iterable1)=}")
-    print(f"{atmost(3,pred1,iterable1)=}")
+    print(f"{atmost(2,pred2,iterable1)=}")
+    print(f"{atmost(3,pred2,iterable1)=}")
