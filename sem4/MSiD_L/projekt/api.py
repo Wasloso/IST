@@ -1,7 +1,5 @@
 import requests
 import json
-from dataclasses import dataclass
-import sys
 import os
 
 
@@ -34,7 +32,10 @@ class api:
         return self.countries
 
 
-    def getDimension(self,write=False) -> dict:
+    def getDimensions(self,write=False) -> dict:
+        '''Get the dimensions of the GHO API, if wirte is True, it will write the data to a json file.\n
+           If data has been already written, retrieve data from a file'''
+        
         if os.path.exists(f'data/dimensions.json') and not write:
             with open(f'data/dimensions.json', "r", encoding="utf-8") as f:
                 self.dimensions = json.load(f)
@@ -54,7 +55,7 @@ class api:
     def getIndicators(self, dimension: str,write=False) -> dict:
         '''Get the indicators of a specific dimension, if wirte is True, it will write the data to a json file.\n
            If data has been already written, retrieve data from a file
-           To get list of dimensions, use getDimension() method'''
+           To get list of dimensions, use getDimensions() method'''
         
         if os.path.exists(f'data/indicators.json') and not write:
             with open(f'data/indicators.json', "r", encoding="utf-8") as f:
