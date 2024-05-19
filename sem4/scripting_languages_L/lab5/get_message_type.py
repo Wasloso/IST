@@ -1,27 +1,26 @@
 import re
+from message_types import MessageType as mt
+from test_logs import test_logs
 
 
 def get_message_type(log: str):
-    types = {
-        "authentication failure": "Theft attempt",
-        "Failed password": "Failed password",
-        "Accepted password": "Login successful",
-        "Connection closed": "Connection closed",
-        "Received disconnect": "Connection closed",
-        "Invalid user": "Invalid username",
-        "Did not receive identification string from": "Login failed",
+    patternToType: dict[str, mt] = {
+        "authentication failure": mt.BREAK_IN_ATTEMPT,
+        "POSSIBLE BREAK-IN ATTEMPT!": mt.BREAK_IN_ATTEMPT,
+        "Failed password": mt.FAILED_PASSWORD,
+        "Accepted password": mt.LOGIN_SUCCESSFUL,
+        "Connection closed": mt.CONNECTION_CLOSED,
+        "Received disconnect": mt.CONNECTION_CLOSED,
+        "Invalid user": mt.INVALID_USERNAME,
+        "Did not receive identification string from": mt.LOGIN_FAILED,
+        ".*": mt.OTHER,
     }
-    for type, message in types.items():
-        match = re.search(type, log)
+    for pattern, type in patternToType.items():
+        match = re.search(pattern.lower(), log.lower())
         if match:
-            return message
-    return "Other"
+            return type
 
 
 if __name__ == "__main__":
-    logs = [
-        "Dec 10 11:26:56 LabSZ sshd[27074]: Failed password for invalid user admin from 51.15.203.45 port 55034 ssh2",
-        "Dec 10 11:27:00 LabSZ sshd[27082]: Received disconnect from 51.15.203.45: 11: Bye Bye [preauth]",
-    ]
-    for log in logs:
+    for log in test_logs:
         print(get_message_type(log))
