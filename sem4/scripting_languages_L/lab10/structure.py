@@ -10,9 +10,10 @@ class Base(DeclarativeBase):
 class Station(Base):
     __tablename__ = "stations"
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    name: Mapped[Optional[str]] = mapped_column(
-        String(255), unique=True, nullable=False
-    )
+    name: Mapped[str] = mapped_column(String(255), unique=True, nullable=False)
+
+    def __repr__(self):
+        return f"<Station id={self.id} name={self.name}>"
 
 
 class Bike(Base):
@@ -25,7 +26,7 @@ class Bike(Base):
 
 class Rental(Base):
     __tablename__ = "rentals"
-    id: Mapped[int] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
 
     bike_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("bikes.id"), nullable=False
@@ -37,5 +38,8 @@ class Rental(Base):
 
     return_station_id: Mapped[int] = mapped_column(Integer, ForeignKey("stations.id"))
     return_station = relationship("Station", foreign_keys=[return_station_id])
+
+    rental_date: Mapped[int] = mapped_column(Integer, nullable=False)
+    return_date: Mapped[int] = mapped_column(Integer, nullable=False)
 
     duration: Mapped[int] = mapped_column(Integer, nullable=False)

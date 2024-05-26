@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import pandas as pd
 from structure import Bike, Station, Rental
+from datetime import datetime
 
 
 def load_data():
@@ -36,9 +37,37 @@ def load_data():
         return_station_name = row["Stacja zwrotu"]
         duration = row["Czas trwania"]
 
-        bike_id = session.query(Bike).filter_by(id=bike_id).first()
-        if not bike_id:
-            session.add(Bike(id=bike_id))
+        bike = session.query(Bike).filter_by(id=bike_id).first()
+        if not bike:
+            bike = Bike(id=bike_id)
+            session.add(bike)
+
+        rental_station = (
+            session.query(Station).filter_by(name=rental_station_name).first()
+        )
+        if not rental_station:
+            rental_station = Station(name=rental_station_name)
+            session.add(rental_station)
+            session.flush()
+
+        return_station = (
+            session.query(Station).filter_by(name=return_station_name).first()
+        )
+        if not return_station:
+            return_station = Station(name=return_station_name)
+            session.add(return_station)
+            session.flush()
+
+        rental = Rental(
+            id=rental_id,
+            bike_id=bike_id,
+            rental_station_id=rental_station.id,
+            return_station_id=return_station.id,
+            rental_date=datetime.strptime(rental_date, "%Y-%m-%d %H:%M:%S").timestamp(),
+            return_date=datetime.strptime(return_date, "%Y-%m-%d %H:%M:%S").timestamp(),
+            duration=duration,
+        )
+        session.add(rental)
 
     session.commit()
     session.close()
