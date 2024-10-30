@@ -1,0 +1,14 @@
+/linux_l
+/data_bases_c
+*.pyc
+/msid_l/*/*.pdf
+*/__pycache__
+!/msid_l/*/raport.pdf
+/pio_c/*
+/pio_l/*
+/scripting_languages_l/lab4/back*/
+/scripting_languages_l/*/*.png
+/scripting_languages_l/*/*.log
+/scripting_languages_l/*/*.pdf
+/scripting_languages_l/*/NASA*
+/scripting_languages_l/*/*.sql*

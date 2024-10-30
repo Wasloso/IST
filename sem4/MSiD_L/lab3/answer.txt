@@ -1,0 +1,7 @@
+Jeśli model 'zbyt dokładnie' dopasowauje się do danych, z użyciem których jego parametry były estymowane,
+oznacza to, że zostawia ona bardzo mało miejsca na wszelkie odchyły od wyuczonej 'normy'. Co za tym idzie, jeśli będziemy chcieli
+sprawdzić nowe dane, nieuzywane do estymacji parametrów, może się okazać, że estymacja jest znacząco odchylona od rzeczywistej watości danej. Tworząc model, należy brać pod uwagę rozbieżność danych, i zostawić miejsce w estymacji na wszelki 'szum', ponieważ realistyczne dane
+nigdy nie zawsze będą się układać w sposób przewidywalny.
+
+Dla przykładu, stworzyłem dwa wykresy dla zadania z laboratoriów. W przypadku wykresu zapisanego w pliku good.png wykorzystałem
+wielomian drugiego stopnia. Widoczny jest 'szum' danych, ponieważ średni błąd aproksymacji jest widoczny. Jednak, gdy będziemy testować wykres regresji dla wielomianów większego stopnia, można zauważyć, że funkcja regresji będzię się pokrywać w znacząym stopniu z testowanymi danymi, przez co wykres może przybierać nieoczekiwane formy, co widać na obrazku bad.png, w którym wykorzystałem wielomian 8 stopnia.
