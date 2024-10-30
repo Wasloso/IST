@@ -1,0 +1,10 @@
+lab3 
+
+3 algorytmy wybrać
+1.1 tabelka (12 wynikow) 3 entropie dla jawnych + 3x3 szyfrowanie
+1.2 test jednorodny/średnio zróżnicowany i rozne dlugosci klucza sprawdzić
+1.3 - pytania i nie trzeba komentować poprzednich podpunktkow
+
+2.2 des/potrojny des dla ecb/cbc, ofb/cfb można online sprobowac ale skuoic się na cryptoola, przyjrzeć się histogramom
+
+screeny z 2.5, 2.3

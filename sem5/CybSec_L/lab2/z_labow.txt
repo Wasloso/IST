@@ -1,0 +1,35 @@
+3 algorytmy do raportu
+	- przestrzen kluczy (ilość możliwych kluczy dla algorytmu) (liczba klucz)
+	- skutki wielokrotnego szyfrowania
+2.1, 2.2 tabelki, 2.3, 2.4 screeny
+2.5-2.7 swoimi słowami, kortkie
+ostatnie - wytlumaczyc co to ngram, entropia, hisotgram (pozostale nie muszza być)
+zad 3. pierwsze 2 zadania tylok
+
+
+text: 
+Computer security (also cybersecurity digital security or information technology (IT) security) is the protection of computer software systems and networks from threats that can lead to unauthorized information disclosure theft or damage to hardware software or data as well as from the disruption or misdirection of the services they provide
+
+The significance of the field stems from the expanded reliance on computer systems the Internet and wireless network standards Its importance is further amplified by the growth of smart devices including smartphones televisions and the various devices that constitute the Internet of things (IoT) Cybersecurity has emerged as one of the most significant new challenges facing the contemporary world due to both the complexity of information systems and the societies they support Security is particularly crucial for systems that govern large-scale systems with far-reaching physical effects such as power distribution elections and finance
+
+Although many aspects of computer security involve digital security such as electronic passwords and encryption physical security measures such as metal locks are still used to prevent unauthorized tampering IT security is not a perfect subset of information security therefore does not completely align into the security convergence schema
+
+
+Cezar
+	- wielokrotne szyfrowanie może doprowadzić do odszyfrowania wiadomości
+	- ma to związek z przesunieciem, jeśli laczna wartość przesuniec podczas następnych szyfrowan będzie podzielna przez 26
+	to tekst zzostanie rozszyfrowany
+
+
+2.1 
+Jezyk		Entropia
+Angielski	4.12
+Polski		4.25
+Czeski		4.29
+
+2.2
+Szyfrowanie		Entropia
+Jawny			4.12
+Caesar(L)		4.12
+adfgvx(cybsec)		2.42	
+permutacyjny(cybsec)->(seccyb)	4.12
