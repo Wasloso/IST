@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rozmiar tekstu</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <nav class="back">
+        <a href="index.html">Powrót</a>
+    </nav>
+    <div class="separator"></div>
+
+    <p>
+        Istnieją różne sposoby ustawiania wielkości tekstu w dokumencie, najpopularniejsze z nich to:
+        <ul>
+            <li>em - jednostka względna do wielkości "rodzica"</li>
+            <li>px - piksele monitora</li>
+            <li>pt - punkt drukarski</li>
+            <li>pc - 1/12 pt</li>
+            <li>cm, mm, in - centymetr milimtr cal</li>
+            <li>ex - wyokość czcionki</li>
+            <li>x% - procentowa wartość bieżącej czcionki</li>
+        </ul>
+        Ogólnie zaleca się wykorzystywanie: em, px oraz x% do wyświetlania treści
+    </p>
+
+
+    <h2>Wykorzystanie jednostek bezwzględnych</h2>
+    <p style="font-size: 12px;">Tekst o wielkości 12px (pikseli).</p>
+    <p style="font-size: 14pt;">Tekst o wielkości 14pt (punktów).</p>
+    <h2 class="centered">Wykorzystanie jednostek względnych</h2>
+    <table style="width: 50%; margin-left: 25%; font-size: 12px;">
+        <thead>
+            <tr>
+                <th colspan="5">Bazowy rozmiar tekstu tabeli: 12px</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>em</td>
+                <td style="font-size: 0.5em;">0.5em</td>
+                <td style="font-size: 1em;">1em</td>
+                <td style="font-size: 1.5em;">1.5em</td>
+                <td style="font-size: 2em;">2em</td>
+            </tr>
+            <tr>
+                <td>x%</td>
+                <td style="font-size: 50%;">50%</td>
+                <td style="font-size: 100%;">100%</td>
+                <td style="font-size: 150%;">150%</td>
+                <td style="font-size: 200%;">200%</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="separator"></div>
+    <table style="width: 50%; margin-left: 25%; font-size: 24px;">
+        <thead>
+            <tr>
+                <th colspan="5">Bazowy rozmiar tekstu tabeli: 24px</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>em</td>
+                <td style="font-size: 0.5em;">0.5em</td>
+                <td style="font-size: 1em;">1em</td>
+                <td style="font-size: 1.5em;">1.5em</td>
+                <td style="font-size: 2em;">2em</td>
+            </tr>
+            <tr>
+                <td>x%</td>
+                <td style="font-size: 50%;">50%</td>
+                <td style="font-size: 100%;">100%</td>
+                <td style="font-size: 150%;">150%</td>
+                <td style="font-size: 200%;">200%</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    
+</body>
+</html>

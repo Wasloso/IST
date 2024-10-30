@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Box model</title>
+</head>
+<body>
+    <nav class="back">
+        <a href="index.html">Powrót</a>
+    </nav>
+    <div class="separator"></div>  
+
+    <h1 class="centered custom-border text-light" style="letter-spacing: 10px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Pozycjonowanie absolutne</h1>
+    <div class="big-box fill-orange outer centered" style="padding: 25px;">
+        <div class="medium-box fill-blue" style="position: absolute;">
+            <div class="small-box fill-red"></div>
+            <div class="small-box fill-red" style="position: absolute;left:50px;"></div>
+        </div>
+        <div class="medium-box fill-blue" style="position: absolute;left: 50%;top:50%;margin: 15px 0 0 15px ;">
+            <div class="small-box fill-red"></div>
+            <div class="small-box fill-red" style="position: absolute;left:50px;"></div>
+        </div>
+    </div>
+    <h1 class="centered custom-border text-normal" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Pozycjonowanie static</h1>
+    <div class="big-box fill-orange" style="position: static;padding: 10px;">Margin: 0px, Padding: 10px</div>
+    <div class="medium-box fill-blue" style="position: static;margin: 10px;">Margin 10px, Padding 0px</div>
+    <div class="small-box fill-red" style="position: static;margin: 15px;">Margin 15px</div>
+
+    <h1 class="centered custom-border">Pozycjonowanie relative</h1>
+    <div class="small-box fill-red" id="move-content-right-down">
+        <div class="small-box fill-blue">
+            <div class="small-box fill-red">
+                <div class="small-box fill-blue">
+                    <div class="small-box fill-red">
+                        <div class="small-box fill-blue">
+                            <div class="small-box fill-red">
+                                <div class="small-box fill-blue">
+                                    <div class="small-box fill-red">
+                                        <div class="small-box fill-blue">
+                                            <div class="small-box fill-red"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="small-box fill-red" id="move-content-right-down" style="position: relative;top:-50px;right:-100px;">
+        <div class="small-box fill-blue">
+            <div class="small-box fill-red">
+                <div class="small-box fill-blue">
+                    <div class="small-box fill-red">
+                        <div class="small-box fill-blue">
+                            <div class="small-box fill-red">
+                                <div class="small-box fill-blue">
+                                    <div class="small-box fill-red">
+                                        <div class="small-box fill-blue">
+                                            <div class="small-box fill-red"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="small-box fill-red" id="move-content-right-down" style="position: relative;top:-100px;right:-200px;">
+        <div class="small-box fill-blue">
+            <div class="small-box fill-red">
+                <div class="small-box fill-blue">
+                    <div class="small-box fill-red">
+                        <div class="small-box fill-blue">
+                            <div class="small-box fill-red">
+                                <div class="small-box fill-blue">
+                                    <div class="small-box fill-red">
+                                        <div class="small-box fill-blue">
+                                            <div class="small-box fill-red"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 200px;"></div>
+    <h1 class="centered custom-border text-bold" style="letter-spacing: -1.5px;">Pozycjonowanie float</h1>
+    <div class="small-box fill-orange" style="float: left;margin: 15px;"></div>
+    <div class="with-text">
+        <p class="text-shadow">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+        </p>
+        <div class="small-box fill-orange" style="float: right;margin-right: 50px;margin: 15px;"></div>
+        <p class="text-bold">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestias culpa ducimus error ab enim sit placeat consequatur fugit modi labore laudantium impedit vel, quasi accusantium reprehenderit nobis recusandae aspernatur?
+        </p>
+
+    </div>
+
+    <div class="big-box fill-blue" style="position: fixed;top: 0;right: 0;margin: 10px;opacity: 90%;padding: 25px">
+        <h2 class="centered">Fixed</h2>
+        <h2 class="centered">Fixed</h2>
+        <h4>Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</h4>
+    </div>
+
+
+    
+    
+
+    
+    
+</body>
+</html>
