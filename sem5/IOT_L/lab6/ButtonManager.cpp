@@ -22,7 +22,6 @@ Button::~Button()
 
 void Button::begin()
 {
-    pinMode(_pin, INPUT_PULLUP);
     if (_pin == 2)
     {
         attachInterrupt(digitalPinToInterrupt(_pin), handleInterrupt_pin2, CHANGE);
@@ -31,11 +30,10 @@ void Button::begin()
     {
         PCICR |= (1 << PCIE2);
         PCMSK2 |= (1 << PCINT20);
+    }else{
+        return
     }
-    else
-    {
-        throw "Wrong pin number";
-    }
+    pinMode(_pin, INPUT_PULLUP);
 }
 
 ISR(PCINT2_vect)
