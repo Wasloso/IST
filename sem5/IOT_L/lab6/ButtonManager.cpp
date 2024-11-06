@@ -3,7 +3,7 @@
 
 Button *instances[2] = {nullptr, nullptr};
 Button::Button(int pin, unsigned long debounceTime, unsigned long longPressTime, Callback onClick, Callback onLongPress)
-    : _pin(pin), _debounceTime(debounceTime), _longPressTime(longPressTime), _lastState(HIGH), _lastPressTime(0), _onClick(onClick), _onLongPress(onLongPress), debouncedState(HIGH)
+    : _pin(pin), _debounceTime(debounceTime), _longPressTime(longPressTime), _lastState(HIGH), _lastPressTime(0), _onClick(onClick), _onLongPress(onLongPress), debouncedState(HIGH), _lastInterruptTime(0)
 {
     if (_pin == 2)
     {
@@ -23,7 +23,24 @@ Button::~Button()
 void Button::begin()
 {
     pinMode(_pin, INPUT_PULLUP);
-    attachInterrupt(digitalPinToInterrupt(_pin), _pin == 2 ? handleInterrupt_pin2 : handleInterrupt_pin4, CHANGE);
+    if (_pin == 2)
+    {
+        attachInterrupt(digitalPinToInterrupt(_pin), handleInterrupt_pin2, CHANGE);
+    }
+    else if (_pin == 4)
+    {
+        PCICR |= (1 << PCIE2);
+        PCMSK2 |= (1 << PCINT20);
+    }
+    else
+    {
+        throw "Wrong pin number";
+    }
+}
+
+ISR(PCINT2_vect)
+{
+    instances[1]->handleInterrupt_pin4();
 }
 
 void Button::handleInterrupt_pin2()
@@ -35,33 +52,41 @@ void Button::handleInterrupt_pin4()
 {
     instances[1]->handleButton();
 }
-
 void Button::handleButton()
 {
     int buttonState = digitalRead(_pin);
-    static unsigned long lastInterruptTime = 0;
-    unsigned long interruptTime = millis();
-    if (interruptTime - lastInterruptTime > _debounceTime)
+    unsigned long currentMillis = millis();
+
+    if (currentMillis - _lastInterruptTime > _debounceTime)
     {
-        if (debouncedState != buttonState)
+
+        if (buttonState != debouncedState)
         {
-            if (buttonState == LOW)
+            _lastInterruptTime = currentMillis;
+            debouncedState = buttonState;
+
+            if (debouncedState == LOW)
             {
-                _lastPressTime = interruptTime;
+                _lastPressTime = currentMillis;
             }
             else
             {
-                if (interruptTime - _lastPressTime > _longPressTime && _onLongPress)
+
+                if (currentMillis - _lastPressTime > _longPressTime)
                 {
-                    _onLongPress();
+                    if (_onLongPress != nullptr)
+                    {
+                        _onLongPress();
+                    }
                 }
-                else if (_onClick)
+                else
                 {
-                    _onClick();
+                    if (_onClick != nullptr)
+                    {
+                        _onClick();
+                    }
                 }
             }
         }
-        debouncedState = buttonState;
     }
-    lastInterruptTime = interruptTime;
 }
