@@ -1,0 +1,214 @@
+\documentclass{article}
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[bottom=1cm, right=2.5cm, left=2.5cm, top=1.5cm]{geometry}
+\graphicspath{{../pliki}}
+
+
+
+\title{%
+  Cyberbezpieczeństwo - laboratoria 5 \\
+  \large Analiza współczesnych algorytmów}
+\author{Patryk Łuszczek 272707}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Ocena możliwości kryptoanalizy algorytmów symetrycznych}
+\subsection{Zadanie}
+Do szyfrowania zostały wykozystane kolejne części klucza: \\ \textbf{5B516958F96FB744A7ECBD8DBF7A25B516958F96FB744A7ECBD8DBF7A2}
+
+\begin{table}[H]
+    \centering
+    \caption{Czas potrzebny do odnalezienia pełnego klucza o różnej długości}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+                      & \textbf{64} & \textbf{128} & \textbf{192} & \textbf{256} \\ \hline
+        \textbf{3DES} &             & 2.5e+021     &              &              \\ \hline
+        \textbf{DES}  & 1.4e+004    &              &              &              \\ \hline
+        \textbf{RC4}  & 2.1e+006    & 5.6e+025     &              &              \\ \hline
+        \textbf{AES}  &             & 1.8e+025     & 4.7e+044     & 9.5e+063     \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Zadanie}
+
+\begin{table}[H]
+    \centering
+    \caption{Czas potrzebny do odnalezienia klucza o długości 128bitów dla różnych algorytmów}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{IDEA} & \textbf{3DES} & \textbf{TWOFISH} & \textbf{MARS} \\ \hline
+        1.5e+026 lat  & 2.5e+021 lat  & 3.3e+025 lat     & 2.8e+025 lat  \\ \hline
+    \end{tabular}
+\end{table}
+\subsection{Zadanie}
+Wykorzystany został algorytm \textbf{AES (CBC)}, o kluczu \textbf{5B516958F96FB744A7ECBD8DBF7A25B5}
+
+\begin{table}[H]
+    \centering
+    \caption{Czas potrzebny do odnalezienia klucza przy x nieznanych bitach}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{4}  & \textbf{8}  & \textbf{16} & \textbf{32} & \textbf{64} \\ \hline
+        natychmiast & natychmiast & ok. 0.5s    & 2h          & 1.1e+6 lat  \\ \hline
+    \end{tabular}
+\end{table}
+\subsection{Zadanie}
+Wykorzystany został algorytm \textbf{AES (CBC)}, o kluczu \textbf{5B516958F96FB744A7ECBD8DBF7A25B5}
+\begin{table}[H]
+    \centering
+    \caption{Czas potrzebny do odnalezienia klucza przy x nieznanych bitach w różnych miejscach}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+                          & \textbf{4}  & \textbf{8}  & \textbf{16} & \textbf{32} & \textbf{64} \\ \hline
+        \textbf{początek} & natychmiast & natychmiast & ok. 0.5s    & 2h          & 1.1e+6 lat  \\ \hline
+        \textbf{środek}   & natychmiast & natychmiast & ok. 0.5s    & 2h          & 1.1e+6 lat  \\ \hline
+        \textbf{koniec}   & natychmiast & natychmiast & ok. 0.5s    & 2h          & 1.1e+6 lat  \\ \hline
+    \end{tabular}
+\end{table}
+\subsection{Zadanie}
+W przypadku krótkich kluczy, lub kluczy z niewielką liczbą brakujących bitów, gdzie czas łamania klucza był bardzo króki poprawny klucz został otrzymany każdorazowo.
+Dla sprawdzenia działania algorytmu dla dłuższych kluczy / bardziej wybrakowanych, czas łamania byłby zbyt długo, żeby stwierdzić czy algorytm odszyfruje tekst poprawnie. Liczba szukanych bitów nie ma wpływu na jakość
+odtwarzanego klucza, ponieważ i tak każdorazowo trzeba sprawdzić wszystkie możliwe kombinacje bitów. Również nie ma wpływu pozycjan nieznanych bitów z tego samego powodu - metododa brute force przeszukuje wszystkie możliwości i je sprawdza.
+\subsection{Czy współczesne algorytmy blokowe możemy uznać za bezpieczne (w świetle przeprowadzonych eksperymentów)?}
+Ze względu na bardzo długi czas potrzebny do złamania klucza, przy użyciu metody brute-force, algorytmy można uznać za bezpieczne.
+Ważne jednak jest to, aby wykorzystać algorytmy obsługujące klucze odpowiedniu długie - dla przykładu wykorzystanie klucza 64 bitowego oznaczało, że
+klucz zostanie odnaleziony w przeciągu \textbf{14 000 lat} dla algorytmu DES, co powoduje, że złamanie go jest praktycznie niemożliwe. Wykorzystanie dłuższych kluczy znacząco podnosi, czas potrzebny
+do jego złamania, w związku z tym można uznać, że współczesne algorytmy są bezpieczne.
+
+\subsection{Jaka długość klucza oferuje nam wystarczający poziom bezpieczeństwa?}
+Z przeprowadzonego eksperymentu wynika, że już wykorzystanie klucza 64-bitowego zapewnia bardzo długi czas potrzebny do jego złamania metodą brute force.
+Wykorzystanie dłuższych kluczy jednak znacząco podnosi czas potrzebny do złamania klucza, więc zaleca się używanie dłuższych kluczy. Dla przykładu wykorzystanie klucza 128-bitowego
+oznacza, że czas potrzebny na złamanie jest rzędu od \(2.5 \times 10^{21}\) do \(1.5 \times 10^{26}\) lat, co czyni go praktycznie niemożliwym do złamania.
+
+\subsection{Czy wielkość kryptogramu ma wpływ na możliwość jego złamania?}
+Wielkość kryptogramu ma wpływ na możliwość jego złamania, ponieważ im większy jest kryptogram tym więcej informacji można z niego wyciągnąc drogą kryptoanalizu.
+Dla przykładu, analiza algorytmów blokowych na większej ilości danych pozwala na dokładniejsze zidentyfikowanie cykliczności, autokorelacji, dokładniejsze n-gramy oraz bardziej wartościowe histogramy.
+
+\subsection{Czy format i wcześniejsze przetwarzanie dokumentu (kompresja, zmiana formatu dokumentu,...) wpłwa na możliwość jego kryptoanalizy?}
+Przetwarzanie dokumentu przed zaszyfrowaniem może mieć wpływ na możliwości kryptoanalizy.
+Przede wszystkim kompresja dokumentu sprawia, że zawiera on mniejszą ilość informacji, co zmniejsza możliwość kryptoanalizy. Dzięki kompresji zmniejszona może zostać entropia,
+histogramy, n-gramy mogą być mniej dokładne, oraz może zostać zaburzona cykliczność oraz autokorelacja.
+
+\subsection{Ile możliwych haseł możemy sprawdzić przez rok nieustannej pracy na jednym komputerze, który sprawdza milion haseł w ciągu sekundy? Co ten wynik mówi o bezpieczeństwie współczesnych algorytmów?}
+Taki komputer w ciągu roku sprawdziłby \(10^{6} \times 60 \times 60 \times 24 \times 365 =  3.1536 \times 10^{13} \) haseł. Ilość możliwych haseł dla klucza o długości 128-bitów wynosi \(2^{128} \approx 3.4028 \times 10^{38}\), więc złamanie go zajęłoby temu komputerowi
+\( \frac{3.4028 \times 10^{38}}{3.1536 \times 10^{13}} \approx 1.08 \times 10^{25} \) lat. Oznacza to, że współczesne algorytmy są bardzo bezpieczne (jeśli jedyną metodą ataku jest brute-force).
+
+
+
+\section{Ocena możliwości kryptoanalizy algorytmów asymetrycznych}
+\subsection{Zadanie}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Indeks} & \textbf{Rok} & \textbf{Miesiąc} & \textbf{Dzień} & \textbf{Godzina} & \textbf{Minuta} \\ \hline
+        272707          & 2024         & 11               & 11             & 08               & 50              \\ \hline
+    \end{tabular}
+\end{table}
+
+\[
+    \begin{array}{r|l}
+        272707202411110850 & 2        \\
+        136353601205555425 & 5        \\
+        27270720241111085  & 5        \\
+        5454144048222217   & 17       \\
+        320832002836601    & 2383     \\
+        134633656247       & 8543     \\
+        15759529           & 15759529 \\
+        1
+    \end{array}
+\]
+
+Znaleziono 7 czynników, narzędzie CrypTool odnalazło je w 0.022 sekundy.
+\subsection{Zadanie}
+
+\begin{table}[H]
+    \centering
+    \caption{Czas poszukiwania liczb pierwszych}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{}{Max przedział} & \textbf{czas} \\ \hline
+        \(2^{4}\)                & natychmiast   \\ \hline
+        \(2^{8}\)                & natychmiast   \\ \hline
+        \(2^{12}\)               & natychmiast   \\ \hline
+        \(2^{16}\)               & 4s            \\ \hline
+        \(2^{20}\)               & 47s           \\ \hline
+        \(2^{21}\)               & 1m 25s        \\ \hline
+        \(2^{22}\)               & 2m 45s        \\ \hline
+    \end{tabular}
+\end{table}
+Czas poszukiwania rośnie wrazze wzrostem wykładnika. Jak można zauważyć czas potrzebny do odnalezienia klcuzy podwaja się,
+więc można przyjąć, że dla maksymalnego przedziału \(2^{22}\) czas wynosiłby około 5 minut.
+
+\subsection*{Ataki oparte na kracie}
+Ataki oparte na kracie wykorzystują matematyczne właściwości struktur kratowych.
+Z pomocą wykorzystania problemu najkrótszego lub najbliższego wektora, można ułożyć
+zadanie kratowe pozwalające na złamanie pewnych aspektów algorytmu RSA, które zostaną przedstawione w dalszej części sprawozdania.
+\subsection{Faktoryzacja z podpowiedzią}
+Algorytm RSA wykorzystuje kika parametrów:
+\begin{itemize}
+    \item Liczba p oraz q - dwie liczby pierwsze
+    \item Moduł N - iloczyn liczb p oraz q
+    \item Eksponent e
+\end{itemize}
+Moduł N wraz z eksponentem e stanowią klucz publiczny (N,e), a znając wszystkie parametry można obliczyć wartość klucza prywatnego - d. Współcześnie wykorzystuje się dostatecznie duże moduły N, na przkład 1024, 2048 lub 4096 bitowe.
+Wielkość N jest bezpośrednio związana z bezpieczeństwem szyfru - im większe N tym większa jest przestrzeń współczynników rozkładu, a w związku z tym trudniej jest złamać szyfrogram.
+W celu rozszyfrowania szyfrogramu za pomocą ataków, N musi zostać rozłożony na czynniki pierwsze, co jest bardzo trudne i czasochłonne dla dużych liczb.
+W związku z tym, że obecnie złamanym kluczem RSA, był klucz klucz 829 bitowy, zaleca się wykorzystanie kluczy przynajmniej 2048-bitowych.
+
+W celu wykonania ataku faktoryzacji z podpowiedzią, potrzebny jest fragment tekstu jawnego oraz fragment parametru p - jednego ze składników modłułu N. Im dłuższy jest znany fragment parametru p, czyli P, tym łatwiej
+jest dokonać skutecznego ataku, ponieważ liczba możliwych kombinacji maleje.
+\subsection{Ataki na wiadomości stereotypowe}
+Atak taki jest możliwy do zrezlizowania, tylko gdy zaszyfrowana wiadomość jest krótka, a nieznany fragment jest niewielki - czyli znana jest znaczna część tekstu jawnego.
+W przypadku wykorzystania tej metody, trzeba znać pozycję oraz długość nieznanej części szyfrogramu, dlatego atak ten może być skuteczny w przypadku stereotypowych wiadomości, na przykład "Mój pin to XXXX", gdzie XXXX oznacza nieznany fragment szyfrogramu.
+Więc znając szyfrogram można przeprowadzić atak na tego typu wiadomości. W przypadku bardziej złożonych wiadomości, dużego N, bardzo małego znanego fragmentu szyfrogramu, atak ten nie będzie skuteczny.
+\subsection{Atak na mały tajny klucz}
+Atak na mały tajny klucz, jest atakiem w wyniku którego możemy poznać współczynniki faktoryzacji modułu N. W celu przeprowadzenia ataku, musimy znać moduł N, eksponent e oraz eksponent d, który musi być stosunkowo mały w celu przeprowadzenia ataku.
+Im mniejszy jest eksponent d tym łatwiejszy jest atak, ponieważ zmniejsza się wartość delta, która jest stosunkiem logarytmu z d do logarytmu z N. Program cryptool pozwala na przeprowadzenie ataku, tylko jeśli delta jest mniejsza od 0.29.
+
+Program CrypTool umożliwia nam wygenerowanie parametrów N, e, delty oraz d, a następnie przeprowadza proces ataku. Dla domyślnych parametrów kraty, czyli m=4 (rozmiar kraty), delta może maksymalnie wynosić 0.2653. Jeśli chcemy przeprowadzić atak na większych wartościach d musimy zwiększyć rozmiar kraty.
+
+\begin{table}[H]
+    \centering
+    \caption{Czas potrzebny do odnalezienia współczynników p oraz q}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Bity N} & \textbf{Delta} & \textbf{m} & \textbf{Czas} \\ \hline
+        256             & 0.26           & 4          & natychmiast   \\ \hline
+        512             & 0.26           & 4          & 2s            \\ \hline
+        512             & 0.265          & 5          & 7s            \\ \hline
+        512             & 0.27           & 6          & 25s           \\ \hline
+        1024            & 0.26           & 4          & 5s            \\ \hline
+        1024            & 0.27           & 6          & 1m 55s        \\ \hline
+        2048            & 0.26           & 4          & 28s           \\ \hline
+        2048            & 0.27           & 6          & 9m 11s        \\ \hline
+    \end{tabular}
+\end{table}
+
+\textbf{Wnioski: } Im większy moduł N, tym dłużej trwa atak, ma to oczywiście związek z większą przestrzenią poszukiwania. Również widoczny jest wpływ delty na czas ataku - im mniejsza delta tym mniejszy jest współczynnik d, i łatwiej jest znaleźć współczynniki faktoryzacji.
+Jeśli natomiast delta jest zbyt duża, atak może trwać bardzo długo, ponieważ dla dużych wartości d, trzeba przeprowadzić o wiele więcej operacji i zwiększyć rozmiar kraty co ma bezpośredni wpływ na szybkość wykonywania działań.
+
+\subsection{Jaka jest minimalna długość modułu N algorytmu RSA, która gwarantuje, że jej rozkład będzie dostatecznie trudny?}
+Jak już wcześniej zostało wspomniane w podpunkcie 2.3, obecnie największym złamanym modułem N był moduł 829-bitowy, co sprawia, że w przeciągu kilku lat możliwe, że zostanie złamany klucz 1024-bitowy.
+W związku z tym powinno się stosować większe moduły, które będą bardziej odporne na ataki, na przykład klucz 2048-bitowy.
+\subsection{Czy dla przyjętej we wcześniejszym punkcie bezpiecznej długości modułu, można przeprowadzić skuteczny atak faktoryzacji w oparciu o częściową znajomość wartości jednego z parametrów?}
+Przestrzń poszukiwania klucza zależy od jego długości - im dłuższy klucz tym więcej kombinacji trzeba sprawdzić. Gdy znana jest część jednego ze współczynników, przestrzeń poszukiwań
+maleje, co znacząco usprawnia poszukiwanie klucza.
+\subsection{W jakich przypadkach szyfrowanie algorytmem RSA może być zagrożone przez atak realizowany w punkcie 4?}
+Ataki na wiadomości stereotypowe są skuteczne, gdy zaszyfrowana wiadomość jest krótka oraz "stereotypowa", jak było już wspomniane w podpunkcie 2.4. Atak ten jest szczególnie skuteczny, dla kluczy o małej wartości, jednak
+jest to wspólna cecha większości algorytmów szyfrujących.
+\subsection{W jakich przypadkach szyfrowanie algorytmem RSA może być zagrożone przez atak realizowany w punkcie 5?}
+W przypadku ataków na mały tajny klucz, są one skuteczne w przypadku, jak sama nazwa wskazuje, małych wartości klucza tajnego d. Wystarczająco mały klucz prywatny d znacząco zawęża
+przestreń poszukiwań, nawet dla dużych modułów N.
+
+
+
+\end{document}

@@ -1,0 +1,5 @@
+Funkcja haszuj¹ca jest wa¿nym elementem techniki uwierzytelniania wiadomoœci.
+Otrzymuje ona dane wejœciowe o ró¿nej wielkoœci i wytwarza wartoœæ skrótu o sta³ej
+wielkoœci.
+Funkcja haszuj¹ca u¿ywa funkcji kompresji w sposób powtarzalny, aby
+wygenerowaæ n-bitow¹ wartoœæ wyjœciow¹.

@@ -75,10 +75,10 @@ function initializeCanvas() {
             const y = event.clientY - rect.top;
             console.log(x, y);
             const corners = [
-                { x: 0, y: 0 },
-                { x: 0, y: canvas.height },
-                { x: canvas.width, y: 0 },
-                { x: canvas.width, y: canvas.height }
+                { x: 0, y: y },
+                { x: x, y: rect.bottom },
+                { x: x, y: 0 },
+                { x: rect.right, y: y }
             ]
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.beginPath();

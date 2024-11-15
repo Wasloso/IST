@@ -1,0 +1,6 @@
+[submodule "sem5/DataBases_P/Data-Generator"]
+	path = sem5/DataBases_P/Data-Generator
+	url = https://github.com/coolka1234/Data-Generator.git
+[submodule "sem5/IOT_L/sem5/DataBases_P/DatabaseDataFaker"]
+	path = sem5/IOT_L/sem5/DataBases_P/DatabaseDataFaker
+	url = https://github.com/Wasloso/DatabaseDataFaker.git

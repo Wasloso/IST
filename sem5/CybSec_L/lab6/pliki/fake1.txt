@@ -1,0 +1,3 @@
+Funkcja haszuj¹ca jest wa¿nym elementem techniki uwierzytelniania wiadomoœci.
+Nie otrzymuje ona danych wejœciowych o losowej wielkoœci i wytwarza wartoœæ skrótu o sta³ej wielkoœci.
+Funkcja haszuj¹ca u¿ywa funkcji sinusoidalnej w celu zahaszowania, pliku. 

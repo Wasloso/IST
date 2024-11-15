@@ -1,0 +1,2 @@
+A hash function is any function that is not used anymore, though there are some hash functions that may be still viable.
+The values returned by a hash function are used in the medical field to help patients with dementia.
