@@ -67,18 +67,18 @@ W tym zadaniu zostały wykorzystane następujące funkcje skrótu: MD5, SHA-1, R
 \begin{table}[H]
   \caption{Czas ataku dla różnych algorytmów i długości bitów}
   \centering
-  \begin{tabular}{|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|c|}
     \hline
-    \textbf{Algorytm / bity} & \textbf{20} & \textbf{40} & \textbf{60} \\ \hline
-    \textbf{MD5}             & 0.01s       & 17s         & 1h          \\ \hline
-    \textbf{SHA-1}           & 0.02s       & 27s         & 53m         \\ \hline
-    \textbf{RIPEMD-160}      & 0.03s       & 34s         & 2h 25m      \\ \hline
+    \textbf{Algorytm / bity} & \textbf{20} & \textbf{40} & \textbf{60} & \textbf{80} \\ \hline
+    \textbf{MD5}             & 0.01s       & 17s         & 1h          & 55 dni      \\ \hline
+    \textbf{SHA-1}           & 0.02s       & 27s         & 53m         & 66dni       \\ \hline
+    \textbf{RIPEMD-160}      & 0.03s       & 34s         & 2h 25m      & 180dni      \\ \hline
   \end{tabular}
 \end{table}
 
 \subsection{Jak rośnie czas realizacji ataku wraz ze wzrostem wartości parametru opisującego długość ustalonego ciągu bitów?}
 Czas rezlizacji ataku jest ściśle powiązany z parametrem opisującym długość ciągu bitów. Wraz ze wzrostem tego parametru,
-czas realizacji ataku dynamicznie wzrasta. Dla długości 20bitów atak został przeprowadzony natychnmiastowo, natomiast dla długości 60bit, przewidywany czas realizacji wynosi nawet ponad 2 godziny dla funkcji RIPEMD-160.
+czas realizacji wzrasta wykładniczo. Dla długości 20bitów atak został przeprowadzony natychnmiastowo, natomiast dla długości 80 bitową, przewidywany czas realizacji wynosi kilkadziesiąt dni.
 \subsection{Czy wybór funkcji skrótu ma wpływ na czas realizacji zadania poszukiwania kolizji?}
 Jak można zauważyć na tabeli powyżej, czas realizacji ataku jest zależny od funkcji skóru. Najdłuższe czasy realizacji
 zostały zanotowan dla funkcji RIPEMD-160, natomiast najkrótsze dla funkcji MD5, oprócz eksperymentu dla 60 bitów, gdzie SHA-1 okazało się szybsze.
@@ -97,10 +97,46 @@ niż atak brute-force z wykorzystaniem ataku urodzinowego.
 
 \section{Wymiana klucza kryptograficznego}
 tutaj screeny z podpisem ktory to klient
+
+\begin{itemize}
+  \item Generowanie wspólnego klucza DH:
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\textwidth]{klucz_wspolny.png}
+        \end{figure}
+  \item  Klucz dla klienta 1:
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\textwidth]{client1_private_key.png}
+        \end{figure}
+  \item Klucz dla klienta 2:
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\textwidth]{client2_private_key.png}
+        \end{figure}
+  \item Klucz tajny dla obu klientów jest jednakowy, komenda cmp nie zwróciła żadnego wyniku, który wskazywałby na różnice między nimi
+  \item Secret key 1
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\textwidth]{secret_key1.png}
+        \end{figure}
+  \item Secret key 2
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\textwidth]{secret_key2.png}
+        \end{figure}
+\end{itemize}
+
 \subsection{Który sposób wymiany kluczy gwarantuje większe bezpieczeństwo i dlaczego (RSA vs DH)}
 \subsection{Jakie jest ryzyko dla podmiotów korzystających z protokołu wymiany kluczy DH?}
+Jednym z zasadnicych zagrożen wynikających z protokołu wymiany kluczy DH jest podatność na atak typu Man-In-The-Middle. Wiąże się to z brakiem
+mechanizmu autoryzacji, który pozwalałbym na weryfikację wiadomości otrzymanych od drugiej strony. Atakujący może dowolnie manipulować wiadomościami bez wiedzy żadnej ze stron.
+Podczas takiego ataku, atakujący może uzyskać dostęp do do wiadomości, poprzez zmianę transmitowanego klucza na własny. W celu zabezbieczenia się przed tego typu atakiem,
+zaleca się wykorzystanie pewnej formy uwierzytelnienia, np. protokołu PAKE (Password Authentification Key Agreement).
 \subsection{Jakie są inne metody określania wspólnego klucza krypotgraficznego (oprócz DH)}
 \subsection{Który element protokołu DH nie jest przesyłany między klientami? Jak to wpływa na kwestie bezpieczeństwa?}
+W protokole DH nie jest przesyłany klucz prywatny, ustalany indywidualnie dla każdej ze stron. Dzięki kluczowi prywatnemu, strony mogą ustalić wspólny klucz, który jest obecnie niemożliwy do odszyfrowania,
+jeśli poszczególne parametry są wystarczająco skomplikowane.
 \subsection{Sprawdź czy w ostatnim punkcie udał się ustalić ten sam klucz dla obu klientów. Uwzlgędnij w raporcie treść uzgodniionego tajnego klucza.}
-
+W wyniku eksperymentu udało się uzyskać ten sam klucz dla obu klientów, jego treść została zamieszczona we wcześniejszej części raportu.
 \end{document}

@@ -1,0 +1,54 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v8.0": {},
+    ".NETFramework,Version=v8.0/win7-x86": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v8.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\dziun\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad1\\zad1.csproj",
+      "projectName": "zad1",
+      "projectPath": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad1\\zad1.csproj",
+      "packagesPath": "C:\\Users\\dziun\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad1\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\dziun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net80"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net80": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net80": {}
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
+      }
+    }
+  }
+}
