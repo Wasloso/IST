@@ -5,15 +5,15 @@ class Program
 {
     static void Main()
     {
-        zad1();
-        zad2();
-        zad3();
-        zad4();
+        Zad1();
+        Zad2();
+        Zad3();
+        Zad4();
         zad5();
-        zad6();
+        Zad6();
     }
 
-    static void zad1(){
+    static void Zad1(){
         Console.WriteLine("Zadanie 1");
         personTuple person = ("John", "Doe", 30);
         printPerson(person);
@@ -25,13 +25,13 @@ class Program
         }
     }
 
-    static void zad2(){
-        System.Console.WriteLine("\nZadanie 2");
+    static void Zad2(){
+        Console.WriteLine("\nZadanie 2");
         int @class = 1;
         Console.WriteLine(@class);  
     }
 
-    static void zad3(){
+    static void Zad3(){
         System.Console.WriteLine("\nZadanie 3");
         char[] array = ['f','a','d','x','z','.','n','e','t'];
         char[] arrayCopy = Array.Empty<char>();
@@ -47,7 +47,7 @@ class Program
         Console.WriteLine($"Array contains 'o': {Array.Exists(array, element => element == 'o')}");
     }
 
-    static void zad4(){
+    static void Zad4(){
         Console.WriteLine("\nZadanie 4");
         var krotka = new { name = "John", surname = "Doe", age = 30 };
         printKrotka(krotka);
@@ -56,12 +56,12 @@ class Program
         }
     }
     static void zad5(){
-        System.Console.WriteLine("\nZadanie 5");
+        Console.WriteLine("\nZadanie 5");
         DrawCard("Ryszard", "Rys");
         DrawCard(firstLine:"Lab 6", secondLine:"Zadanie 5",borderChar:'-',borderThickness:3,minBorderWidth:30);
         DrawCard(".Net",borderChar:'#',borderThickness:1,minBorderWidth:10);
 
-        void DrawCard(string firstLine, string secondLine="None", char borderChar='X',int borderThickness = 2, int minBorderWidth = 20){
+        void DrawCard(string firstLine, string secondLine="Default", char borderChar='X',int borderThickness = 2, int minBorderWidth = 20){
             if(firstLine.Length+borderThickness*2 > minBorderWidth){
                 minBorderWidth = firstLine.Length+borderThickness*2;
             }
@@ -105,7 +105,7 @@ class Program
         }
     }
 
-    static void zad6(){
+    static void Zad6(){
         Console.WriteLine("\nZadanie 6");
         object[] array = [float.MaxValue,1,2,3,4,5,-6.123,1.6,'a','b',"test1","test2","test5",new Point(1,2)];
         var dict = CountMyTypes(array);
@@ -115,19 +115,19 @@ class Program
 
         static Dictionary<string, int> CountMyTypes(params object[] array)
         {
-            var dict = new Dictionary<string, int> { {"Long string", 0}, {"Int even", 0}, {"Positive double", 0}, {"Other", 0} };
+            var dict = new Dictionary<string, int> { {"LongString", 0}, {"EvenInt", 0}, {"PositiveDouble", 0}, {"Other", 0} };
             foreach (var element in array)
             {
                 switch (element)
                 {
                     case string s when s.Length >= 5:
-                        dict["Long string"] += 1;
+                        dict["LongString"] += 1;
                         break;
                     case int i when i % 2 == 0:
-                        dict["Int even"] += 1;
+                        dict["EvenInt"] += 1;
                         break;
                     case double d when d > 0:
-                        dict["Positive double"] += 1;
+                        dict["PositiveDouble"] += 1;
                         break;
                     default:
                         dict["Other"] += 1;

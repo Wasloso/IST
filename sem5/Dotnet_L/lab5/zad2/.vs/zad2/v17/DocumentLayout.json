@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{64A80B7C-45CB-4300-89DF-C3FE0CE71129}|zad2.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab5\\zad2\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{64A80B7C-45CB-4300-89DF-C3FE0CE71129}|zad2.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{64A80B7C-45CB-4300-89DF-C3FE0CE71129}|zad2.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab5\\zad2\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{64A80B7C-45CB-4300-89DF-C3FE0CE71129}|zad2.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64A80B7C-45CB-4300-89DF-C3FE0CE71129}|zad2.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab5\\zad2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64A80B7C-45CB-4300-89DF-C3FE0CE71129}|zad2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,15 +35,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad2\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad2\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-21T12:37:07.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:23:47.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad2\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab5\\zad2\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-16T11:00:01.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-16T11:00:01.093Z"
             }
           ]
         }
