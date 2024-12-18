@@ -1,0 +1,70 @@
+﻿@model IEnumerable<lab10.Models.Article>
+
+@{
+    ViewData["Title"] = "Shop";
+    var categories = ViewBag.Categories as List<lab10.Models.Category>;
+}
+
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Shop</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a asp-action="Index">All Products</a>
+            </li>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <li class="list-group-item">
+                    <a asp-action="Index" asp-route-categoryId="@category.Id">@category.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-9">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImagePath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @if (item.ImagePath != null)
+                        {
+                            <img src="@item.ImagePath" class="thumbnail" />
+                        }
+                        else
+                        {
+                            <img src="~/default.jpg" class="thumbnail" />
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+</div>
