@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[bottom=1.5cm, right=2.5cm, left=2.5cm, top=1.5cm]{geometry}
+\graphicspath{{../pliki}}
+
+
+
+\title{%
+  Cyberbezpieczeństwo - laboratoria 8 \\
+  \large Zastosowania kryptografii}
+\author{Patryk Łuszczek 272707}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+
+\section{Jaka jest różnica między aktywnymi i pasywnymi atakami MtiM?}
+Pasywny atak MtiM polega na przechwytywaniu danych komunikacji bez wpływania na ich treść. Oznacza to, że jest to atak niewidoczny z punktu widzenia ofiary, ponieważ cały proces działa "w tle". Przykładem jest zbieranie danych wrażliwych takie jak loginy czy hasła.
+Z kolei atak aktywny polega na modyfikowaniu treści - podmianie komunikatu, manipulowanie zawartością czy wstrzykiwanie złośliwych treści do komunikatu. Przykładem aktywnego ataku jest np. przekierowanie ofiary do fałszywej strony, lub przeładowanie wiadomości w celu zmniejszenia wydajności.
+\section{Jak zabezpieczyć swoją sieć przed atakami zatruwania ARP?}
+W celu zabezpieczenia sieci przed atakami zatruwania ARP należy włączyć opcję filtrowania ARP w routerze lub ręczna konfiguracja statystycznych wpisów ARP w kluczowych urządzeniach sieci.
+Innym sposobem jest wykorzystanie oprogramowania wykrywającego ARP-spoofing i zapobiegające tego typu atakom.
+\section{Dlaczego ważne jest, aby używać roszerzeń DNSSEC w celub zapobiegania atakom polegającym na fałszowaniu DNS?}
+Protokół DNS nie zawiera żadnych metod weryfikacji ani zabezpieczeń. W celu poprawy bezpieczeństwa należy wkorzystać rozszerzenie DNSSEC, który za pomocą
+cyfrowych podpisów kryptograficznych umożliwia weryfikacje autentyczności rekordów DNS oraz umożliwia zweryfikowanie ich pochodzenia.
+\section{Co to jest tryb monitorowania i jak można go używać do podsłuchiwania komunikacji siecowej?}
+Tryb monitorowania to tryb pracy karty sieciowej, który umożliwia przechwytywanie wszystkich pakietów przesyłanych w sieci bez konieczności ich przetwrzania czy odsyłania.
+Dzięki trybie monitorowania można podsłuchiwać komunikację sieciową oraz odczytać wiele cennych informacji (o ile nie są zaszyfrowane) takich jak pochodzenie komunikatu, docelowy odbiorca, adresy mac, hasła czy loginy.
+
+\end{document}
