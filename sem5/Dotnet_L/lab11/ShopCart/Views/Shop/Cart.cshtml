@@ -1,0 +1,70 @@
+﻿@model IEnumerable<(lab10.Models.Article Article, int Quantity)>
+
+@{
+    ViewData["Title"] = "Cart";
+    decimal totalCost = ViewBag.TotalCost;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Cart</h2>
+
+        @if (!Model.Any())
+        {
+            <p>Your cart is empty. Go back to the <a asp-action="Index">Shop</a> to add items.</p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Article.Title)</th>
+                        <th>@Html.DisplayNameFor(model => model.Article.Price)</th>
+                        <th>@Html.DisplayNameFor(model => model.Article.ImagePath)</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Article.Title)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Article.Price)</td>
+                            <td>
+                                    @if (item.Article.ImagePath != null)
+                                    {
+                                    <img src="~/@item.Article.ImagePath" class="thumbnail" />
+                                    }
+                                    else
+                                    {
+                                    <img src="~/default.jpg" class="thumbnail" />
+                                    }
+                            </td>
+                            <td>@item.Quantity</td>
+                            <td>@(item.Article.Price * item.Quantity)</td>
+                            <td>
+                                <form asp-action="ModifyQuantity" method="get" style="display: inline;">
+                                    <input type="hidden" name="articleId" value="@item.Article.Id" />
+                                    <button type="submit" class="btn btn-success btn-sm" name="increase" value="true">+</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" name="increase" value="false">-</button>
+                                </form>
+                                <form asp-action="RemoveFromCart" method="get" style="display: inline;">
+                                    <input type="hidden" name="articleId" value="@item.Article.Id" />
+                                    <button type="submit" class="btn btn-secondary btn-sm">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                        <td colspan="2">@totalCost</td>
+                    </tr>
+                </tfoot>
+            </table>
+        }
+    </div>
+</div>

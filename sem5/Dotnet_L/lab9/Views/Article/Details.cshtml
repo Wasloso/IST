@@ -1,0 +1,42 @@
+@model lab9.ViewModels.ArticleViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center">@ViewData["Title"]</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 font-weight-bold text-primary">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="col-sm-4 font-weight-bold text-primary">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+                <dt class="col-sm-4 font-weight-bold text-primary">
+                    @Html.DisplayNameFor(model => model.ExpiresOn)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.ExpiresOn)
+                </dd>
+                <dt class="col-sm-4 font-weight-bold text-primary">
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-end">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary me-2" })
+            @Html.ActionLink("Back", "Index", new { }, new { @class = "btn btn-secondary" })
+        </div>
+    </div>
+</div>

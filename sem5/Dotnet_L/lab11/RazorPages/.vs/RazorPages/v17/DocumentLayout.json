@@ -1,0 +1,633 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\shop\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\shop\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\razorpages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:razorpages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\wwwroot\\upload\\c1aaf21c-eb68-4e07-8d6c-5c18779af367_capture001.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:wwwroot\\upload\\c1aaf21c-eb68-4e07-8d6c-5c18779af367_capture001.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\articles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\articles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\data\\storedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:data\\storedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\data\\modelbuilderextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:data\\modelbuilderextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Migrations\\20250103145317_Init2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250103145317_Init2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\pages\\categories\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:pages\\categories\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Migrations\\20250103143557_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250103143557_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab11\\razorpages\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB12A780-B8EE-4FF7-8B2C-C592BB6EEF34}|RazorPages.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\ErrorViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\Category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\Article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Index.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Articles\\Index.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAcwCgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T15:56:16.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Create.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Create.cshtml.cs",
+              "RelativeToolTip": "Pages\\Categories\\Create.cshtml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:38:33.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Create.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Create.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Create.cshtml",
+              "RelativeToolTip": "Pages\\Categories\\Create.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:38:33.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Details.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Details.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Details.cshtml",
+              "RelativeToolTip": "Pages\\Categories\\Details.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:38:33.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Shop\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Shop\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Shop\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Shop\\Index.cshtml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:44:49.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Details.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Details.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Details.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Details.cshtml.cs",
+              "RelativeToolTip": "Pages\\Categories\\Details.cshtml.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:38:33.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Edit.cshtml.cs",
+              "RelativeToolTip": "Pages\\Categories\\Edit.cshtml.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:38:33.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Index.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Categories\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:38:33.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Shop\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shop\\Index.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Shop\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Shop\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:44:15.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Delete.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Delete.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Delete.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Delete.cshtml.cs",
+              "RelativeToolTip": "Pages\\Categories\\Delete.cshtml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA5wB8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:38:33.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Delete.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Delete.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Delete.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Delete.cshtml.cs",
+              "RelativeToolTip": "Pages\\Articles\\Delete.cshtml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:37:45.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Edit.cshtml.cs",
+              "RelativeToolTip": "Pages\\Articles\\Edit.cshtml.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:37:44.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Details.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Details.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Details.cshtml.cs",
+              "RelativeToolTip": "Pages\\Articles\\Details.cshtml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAiwB8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:37:44.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RazorPages.csproj",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\RazorPages.csproj",
+              "RelativeDocumentMoniker": "RazorPages.csproj",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\RazorPages.csproj",
+              "RelativeToolTip": "RazorPages.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-03T16:42:26.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Details.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Details.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Details.cshtml",
+              "RelativeToolTip": "Pages\\Articles\\Details.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAADwvxYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:37:44.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Delete.cshtml",
+              "RelativeToolTip": "Pages\\Articles\\Delete.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAADwvyAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:37:44.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Create.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Create.cshtml.cs",
+              "RelativeToolTip": "Pages\\Articles\\Create.cshtml.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAADwv0MAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:37:44.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Articles\\Index.cshtml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:37:45.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T15:27:17.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-03T15:30:58.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Article.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Models\\Article.cs",
+              "RelativeDocumentMoniker": "Models\\Article.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Models\\Article.cs",
+              "RelativeToolTip": "Models\\Article.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAD4vxoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:24:44.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Edit.cshtml",
+              "RelativeToolTip": "Pages\\Articles\\Edit.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:37:44.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Create.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Articles\\Create.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Articles\\Create.cshtml",
+              "RelativeToolTip": "Pages\\Articles\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:37:44.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Delete.cshtml",
+              "RelativeToolTip": "Pages\\Categories\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:38:33.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Edit.cshtml",
+              "RelativeToolTip": "Pages\\Categories\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T14:38:33.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "StoreDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Data\\StoreDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\StoreDbContext.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Data\\StoreDbContext.cs",
+              "RelativeToolTip": "Data\\StoreDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:20:38.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "c1aaf21c-eb68-4e07-8d6c-5c18779af367_Capture001.png",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\wwwroot\\upload\\c1aaf21c-eb68-4e07-8d6c-5c18779af367_Capture001.png",
+              "RelativeDocumentMoniker": "wwwroot\\upload\\c1aaf21c-eb68-4e07-8d6c-5c18779af367_Capture001.png",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\wwwroot\\upload\\c1aaf21c-eb68-4e07-8d6c-5c18779af367_Capture001.png",
+              "RelativeToolTip": "wwwroot\\upload\\c1aaf21c-eb68-4e07-8d6c-5c18779af367_Capture001.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-01-03T15:40:37.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ModelBuilderExtension.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Data\\ModelBuilderExtension.cs",
+              "RelativeDocumentMoniker": "Data\\ModelBuilderExtension.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Data\\ModelBuilderExtension.cs",
+              "RelativeToolTip": "Data\\ModelBuilderExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:25:31.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA+wBEAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:26:33.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAACTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-03T14:32:30.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "20250103145317_Init2.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Migrations\\20250103145317_Init2.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250103145317_Init2.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Migrations\\20250103145317_Init2.cs",
+              "RelativeToolTip": "Migrations\\20250103145317_Init2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:53:17.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Categories\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Pages\\Categories\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Categories\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:38:34.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "20250103143557_Init.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Migrations\\20250103143557_Init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250103143557_Init.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Migrations\\20250103143557_Init.cs",
+              "RelativeToolTip": "Migrations\\20250103143557_Init.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:35:58.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:24:56.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab11\\RazorPages\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:24:52.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\lab10\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "..\\..\\lab10\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:23:35.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "..\\..\\lab10\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\Category.cs",
+              "RelativeToolTip": "..\\..\\lab10\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:23:35.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Article.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\Article.cs",
+              "RelativeDocumentMoniker": "..\\..\\lab10\\Models\\Article.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab10\\Models\\Article.cs",
+              "RelativeToolTip": "..\\..\\lab10\\Models\\Article.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T14:23:35.211Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

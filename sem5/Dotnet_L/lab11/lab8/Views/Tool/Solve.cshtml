@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Solve";
+
+}
+
+<html>
+    <head>
+        <style>
+            p, h2{
+                text-align: center; 
+            }
+        .identity-solution{
+            color: purple;   
+        }
+        .no-solution{
+            color: red;
+        }
+        .one-solution{
+            color: green;
+        }
+
+        .two-solutions {
+            color: blue;
+        }
+        </style>
+    </head>
+    <body>
+        <h2>
+            Quadratic formula results for a = @ViewBag.a , b = @ViewBag.b , c = @ViewBag.c
+        </h2>
+        <p class="@ViewBag.cssClass">@ViewBag.message</p>
+    </body>
+</html>

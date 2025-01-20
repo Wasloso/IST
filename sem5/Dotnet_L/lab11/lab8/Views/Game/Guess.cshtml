@@ -1,0 +1,36 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<html>
+<head>
+    <title>Guess Page</title>
+    <style>
+        .counter-small{
+            color: green;
+        }
+        .counter-medium{
+            color: orange;
+            font: large;
+        }
+        .counter-big{
+            color: red;
+            font: x-large;
+        }
+        .centered{
+            text-align: center;
+        } 
+    </style>
+</head>
+<body>
+    <h2 class="centered">@ViewBag.message</h2>
+    @if (@ViewBag.Won){
+        <h2 class="centered",style="color: yellow;">Congratulation!</h2>
+    }else{
+         <p class="@ViewBag.CounterClass centered">Counter value: @ViewBag.Counter</p>
+    }
+    <p>You guesses: @ViewBag.guessList</p>
+</body>
+</html>

@@ -1,0 +1,444 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\views\\shop\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:views\\shop\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\views\\shop\\placeorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:views\\shop\\placeorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\data\\repositories\\articlerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:data\\repositories\\articlerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\controllers\\apiarticlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:controllers\\apiarticlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\views\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:views\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\models\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:models\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\views\\categories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:views\\categories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\views\\shop\\orderconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:views\\shop\\orderconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\data\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:data\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\data\\storedbcontextidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:data\\storedbcontextidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\controllers\\apicategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:controllers\\apicategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\data\\identitydatainitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:data\\identitydatainitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\lab12.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:lab12.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Migrations\\20250113143432_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250113143432_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|c:\\users\\dziun\\documents\\studia\\sem5\\dotnet_l\\lab12\\migrations\\20250113144301_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F53F210-D708-43CB-941D-7A3C75DE7308}|lab12.csproj|solutionrelative:migrations\\20250113144301_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cart.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shop\\Cart.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shop\\Cart.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shop\\Cart.cshtml",
+              "RelativeToolTip": "Views\\Shop\\Cart.cshtml",
+              "ViewState": "AgIAADsAAAAAAAAAAAAQwFEAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T17:58:24.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShopController.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\ShopController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ShopController.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\ShopController.cs",
+              "RelativeToolTip": "Controllers\\ShopController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwD8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T17:50:25.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApiArticlesController.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\ApiArticlesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ApiArticlesController.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\ApiArticlesController.cs",
+              "RelativeToolTip": "Controllers\\ApiArticlesController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAqwFkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T12:28:20.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ArticlesController.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\ArticlesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ArticlesController.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\ArticlesController.cs",
+              "RelativeToolTip": "Controllers\\ArticlesController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowHsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T17:36:07.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ArticleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Data\\Repositories\\ArticleRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\ArticleRepository.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Data\\Repositories\\ArticleRepository.cs",
+              "RelativeToolTip": "Data\\Repositories\\ArticleRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T19:59:26.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderConfirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shop\\OrderConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shop\\OrderConfirmation.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shop\\OrderConfirmation.cshtml",
+              "RelativeToolTip": "Views\\Shop\\OrderConfirmation.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T19:46:21.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlaceOrder.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shop\\PlaceOrder.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shop\\PlaceOrder.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shop\\PlaceOrder.cshtml",
+              "RelativeToolTip": "Views\\Shop\\PlaceOrder.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T18:33:50.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Categories\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Categories\\Details.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Categories\\Details.cshtml",
+              "RelativeToolTip": "Views\\Categories\\Details.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-15T11:47:50.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T14:47:01.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T15:10:11.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shop\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shop\\Index.cshtml",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Views\\Shop\\Index.cshtml",
+              "RelativeToolTip": "Views\\Shop\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-15T12:09:38.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Models\\OrderViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\OrderViewModel.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Models\\OrderViewModel.cs",
+              "RelativeToolTip": "Models\\OrderViewModel.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA9wBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T18:12:06.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAACYAAAAAAAAAAAAhwC8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-15T21:58:25.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "StoreDbContextIdentity.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Data\\StoreDbContextIdentity.cs",
+              "RelativeDocumentMoniker": "Data\\StoreDbContextIdentity.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Data\\StoreDbContextIdentity.cs",
+              "RelativeToolTip": "Data\\StoreDbContextIdentity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T15:10:09.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Data\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Data\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "Data\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T19:59:35.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApiCategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\ApiCategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ApiCategoriesController.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\ApiCategoriesController.cs",
+              "RelativeToolTip": "Controllers\\ApiCategoriesController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAkwEwAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T13:41:35.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:35:25.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAwwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T17:37:25.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T12:45:46.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Models\\CartItem.cs",
+              "RelativeToolTip": "Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T17:52:20.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IdentityDataInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Data\\IdentityDataInitializer.cs",
+              "RelativeDocumentMoniker": "Data\\IdentityDataInitializer.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Data\\IdentityDataInitializer.cs",
+              "RelativeToolTip": "Data\\IdentityDataInitializer.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T16:44:59.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ScaffoldingReadMe.txt",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\ScaffoldingReadMe.txt",
+              "RelativeDocumentMoniker": "ScaffoldingReadMe.txt",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\ScaffoldingReadMe.txt",
+              "RelativeToolTip": "ScaffoldingReadMe.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-01-13T14:46:11.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "lab12.csproj",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\lab12.csproj",
+              "RelativeDocumentMoniker": "lab12.csproj",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\lab12.csproj",
+              "RelativeToolTip": "lab12.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-13T14:43:36.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20250113144301_init.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Migrations\\20250113144301_init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250113144301_init.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Migrations\\20250113144301_init.cs",
+              "RelativeToolTip": "Migrations\\20250113144301_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:43:02.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-13T14:33:38.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20250113143432_init.cs",
+              "DocumentMoniker": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Migrations\\20250113143432_init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250113143432_init.cs",
+              "ToolTip": "C:\\Users\\dziun\\Documents\\studia\\sem5\\Dotnet_L\\lab12\\Migrations\\20250113143432_init.cs",
+              "RelativeToolTip": "Migrations\\20250113143432_init.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:34:32.838Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

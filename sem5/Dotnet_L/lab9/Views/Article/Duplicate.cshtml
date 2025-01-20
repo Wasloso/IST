@@ -1,0 +1,40 @@
+@using lab9.ViewModels
+@model lab9.ViewModels.ArticleViewModel
+@{
+    ViewData["Title"] = "Duplicate";
+}
+<div>
+    <h2>Are you sure you want to duplicate?</h2>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ExpiresOn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ExpiresOn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        @using (Html.BeginForm("Duplicate", null, FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.Id)
+            <input type="submit" value="Duplicate" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Back</a>
+        }
+    </dl>
+</div>

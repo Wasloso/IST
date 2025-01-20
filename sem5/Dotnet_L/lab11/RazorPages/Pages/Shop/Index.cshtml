@@ -1,0 +1,54 @@
+﻿@page "{categoryId?}"
+@model ShopModel
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Shop</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a asp-page="./Index">All Products</a>
+            </li>
+            @foreach (var category in Model.Categories)
+            {
+                <li class="list-group-item">
+                    <a asp-page="./Index" asp-route-categoryId="@category.Id">@category.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Articles)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Price</td>
+                        <td>
+                            @if (item.ImagePath != null)
+                            {
+                                <img src="~/@item.ImagePath" class="thumbnail" />
+                            }
+                            else
+                            {
+                                <img src="~/default.jpg" class="thumbnail" />
+                            }
+                        </td>
+                        <td>@item.Category.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

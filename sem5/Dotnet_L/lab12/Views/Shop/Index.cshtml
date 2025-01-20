@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Shop";
+    var categories = ViewBag.Categories as List<lab12.Models.Category>;
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Shop</h2>
+        <ul class="list-group">
+            @if (!User.IsInRole("Admin"))
+            {
+                <li class="list-group-item">
+                    <a asp-action="Cart" class="btn btn-primary float-end">View Cart</a>
+                </li>
+            }
+            <li class="list-group-item">
+                <a asp-action="Index">All Products</a>
+            </li>
+            @foreach (var category in categories)
+            {
+                <li class="list-group-item">
+                    <a asp-action="Index" asp-route-categoryId="@category.Id">@category.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <div id="articlesContainer" class="d-flex flex-wrap justify-content-start gap-3"></div>
+    </div>
+   
+</div>
+
+ 
+
+
+@section Scripts {
+    <script>
+        let currentPage = 1;
+        const pageSize = 5;
+        let categoryId = @(ViewBag.SelectedCategory ?? "null");
+        let isLoading = false;
+
+        function loadArticles() {
+            if (isLoading) return; 
+            isLoading = true;
+            console.log("loading articles");
+            $.ajax({
+                url: `/api/article/page/${currentPage}/take/${pageSize}`,
+                type: 'GET',
+                data: { categoryId: categoryId },
+                success: function (data) {
+                    console.log("success");
+                    if (data.length === 0) {
+                        const noArticlesCard = $(`
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">No more articles</h5>
+                                    <p class="card-text">Check later for more!</p>
+                                </div>
+                            </div>
+                        `);
+                        $('#articlesContainer').append(noArticlesCard)
+                        setTimeout(() => {
+                            noArticlesCard.addClass('appeared');
+                        }, 100);
+                         $(window).off('scroll');
+                        addPlaceholders()
+                        return;
+                    }
+
+                    data.forEach(function (article, index) {
+                        const imagePath = article.imagePath ? `${article.imagePath}` : 'default.jpg';
+                        const articleCard = $(`
+                            <div class="card">
+                                <img src="/${imagePath}" class="card-img-top" alt="${article.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${article.title}</h5>
+                                    <p class="card-text"><strong>Price:</strong> ${article.price}</p>
+                                    <p class="card-text"><strong>Category:</strong> ${article.category.name}</p>
+                                </div>
+                                <div class="card-footer text-end">
+                                    <button class="btn btn-primary add-to-cart" data-article-id="${article.id}">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        `);
+
+                        $('#articlesContainer').append(articleCard);
+
+                        setTimeout(() => {
+                            articleCard.addClass('appeared');
+                        }, index * 100); 
+                    });
+
+                    addPlaceholders();
+                    currentPage++;
+                    isLoading = false;
+                },
+                error: function () {
+                    alert('Error loading articles.');
+                }
+            });
+        }
+
+        $(window).on('scroll', function () {
+            const scrollPosition = $(window).scrollTop() + $(window).height();
+            const threshold = $(document).height() - 100; 
+            if (scrollPosition >= threshold) {
+                loadArticles();
+            }
+        });
+
+
+        function addPlaceholders() {
+            const container = $('#articlesContainer');
+            const totalCards = container.children('.card').length;
+            const cardsPerRow = Math.floor(container.width() / $('.card').outerWidth(true));
+            const placeholdersNeeded = cardsPerRow - (totalCards % cardsPerRow);
+
+            container.find('.placeholder-card').remove();
+
+            if (placeholdersNeeded < cardsPerRow) {
+                for (let i = 0; i < placeholdersNeeded; i++) {
+                    const placeholder = `<div class="card placeholder-card"></div>`;
+                    container.append(placeholder);
+                }
+            }
+        }
+
+        $(window).on('resize', addPlaceholders);
+
+        $(document).on('click', '.add-to-cart', function () {
+            const articleId = $(this).data('article-id');
+            const button = $(this);
+
+            $.ajax({
+                url: '/Shop/AddToCart',
+                type: 'POST',
+                data: { articleId: articleId },
+                success: function (response) {
+                    if (response.success) {
+                        button.addClass('btn-success').removeClass('btn-primary');
+                        setTimeout(() => {
+                            button.addClass('btn-primary').removeClass('btn-success');
+                        }, 250)
+                    } else {
+                        alert('Failed to add item to cart');
+                    }
+                },
+                error: function () {
+                    alert('Error adding item to cart');
+                }
+            });
+        });
+        loadArticles();
+    </script>
+
+}
