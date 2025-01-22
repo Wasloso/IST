@@ -1,0 +1,40 @@
+<div class="backdrop" (click)="onCancel()"></div>
+<dialog open>
+  <h2>Modify or Add New Article</h2>
+  <form (ngSubmit)="onSubmit()">
+    <!-- Title -->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input 
+        id="title" 
+        name="title" 
+        [(ngModel)]="newArticle.title" 
+        required />
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input 
+            type="number"
+            id="price" 
+            name="price" 
+            [(ngModel)]="newArticle.price" 
+            required />
+    </div>
+    
+    <div class="form-group">
+      <label for="category">Category</label>
+        <select [(ngModel)]="newArticle.category" id="category" name="category" required>
+            @for(category of categories(); track category){
+                <option value="{{category}}">{{category}}</option>
+            }
+        </select>
+    </div>
+
+    <!-- Buttons -->
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</dialog>

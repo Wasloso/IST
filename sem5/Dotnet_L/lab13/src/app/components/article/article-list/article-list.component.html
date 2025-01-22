@@ -1,0 +1,23 @@
+
+
+<div class="container">
+    <div class="articles-container">
+        @for(article of articles(); track article.id){
+        <div class="article-wrapper">
+            <app-article-card [article]="article"></app-article-card>
+        <div class="action-buttons">
+            <button class="btn-edit" (click)="onSelectedEdit(article.id)">Edit</button>
+            <button class="btn-delete" (click)="onSelectedDelete(article.id)">Remove</button>
+          </div>
+        </div>
+        }
+    </div>
+</div>
+@if (isArticleFormOpen) {
+    <app-article-form
+        [article] = "selectedArticle"
+        (cancel) = "onArticleFormCancel()"
+        (save) = "onArticleFormSave($event)"
+    >
+    </app-article-form>
+}
