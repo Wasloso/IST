@@ -1,5 +1,7 @@
 
-
+<div class="top-bar">
+    <button class="btn-add" (click)="onSelectedCreate()">Add New Article</button>
+  </div>
 <div class="container">
     <div class="articles-container">
         @for(article of articles(); track article.id){

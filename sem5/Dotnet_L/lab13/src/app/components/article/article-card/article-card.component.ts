@@ -1,6 +1,5 @@
 import { Component, computed, input, InputSignal, output } from '@angular/core';
 import { Article } from '../../../models/article.model';
-
 @Component({
   selector: 'app-article-card',
   imports: [],

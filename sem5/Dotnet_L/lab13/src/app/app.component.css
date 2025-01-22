@@ -1,6 +1,4 @@
 main {
-    width: 100%;
-    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,6 +12,5 @@ main {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    max-width: 700px;
     margin-bottom: 3rem;
   }

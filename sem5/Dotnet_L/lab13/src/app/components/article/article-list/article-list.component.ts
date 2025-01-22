@@ -27,6 +27,11 @@ export class ArticleListComponent implements OnInit {
     this.isArticleFormOpen = true;
   }
 
+  onSelectedCreate(): void {
+    this.selectedArticle = undefined;
+    this.isArticleFormOpen = true;
+  }
+
   onArticleFormSave(article: Partial<Article>): void {
     if (article.id) {
       console.log('edit');
