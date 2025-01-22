@@ -5,7 +5,7 @@
 <div class="container">
     <div class="articles-container">
         @for(article of articles(); track article.id){
-        <div class="article-wrapper">
+        <div class="article-wrapper" >
             <app-article-card [article]="article"></app-article-card>
         <div class="action-buttons">
             <button class="btn-edit" (click)="onSelectedEdit(article.id)">Edit</button>

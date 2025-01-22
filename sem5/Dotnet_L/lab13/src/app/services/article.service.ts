@@ -87,7 +87,7 @@ export class ArticleService {
   constructor() {}
 
   getArticles(): Article[] {
-    return this.articles;
+    return this.articles.sort((a, b) => a.title.localeCompare(b.title));
   }
 
   addArticle(article: Omit<Article, 'id'>): void {
