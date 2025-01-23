@@ -1,3 +1,6 @@
 [submodule "sem5/DataBases_P/DatabaseDataFaker"]
 	path = sem5/DataBases_P/DatabaseDataFaker
 	url = https://github.com/Wasloso/DatabaseDataFaker.git
+[submodule "sem5/DataBases_P/mongodb_datafaker"]
+	path = sem5/DataBases_P/mongodb_datafaker
+	url = https://github.com/Wasloso/mongodb_datafaker.git
