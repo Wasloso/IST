@@ -23,7 +23,7 @@ export class ArticleListComponent implements OnInit {
 
   onSelectedEdit(id: number): void {
     this.selectedArticle = this.service.getArticle(id);
-    console.log(this.selectedArticleId);
+    console.log(this.selectedArticle?.id);
     this.isArticleFormOpen = true;
   }
 
@@ -34,10 +34,8 @@ export class ArticleListComponent implements OnInit {
 
   onArticleFormSave(article: Partial<Article>): void {
     if (article.id) {
-      console.log('edit');
       this.service.editArticle(article as Article);
     } else {
-      console.log('add');
       this.service.addArticle(article as Article);
     }
     this.articles.set(this.service.getArticles());

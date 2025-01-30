@@ -28,17 +28,18 @@ def readRFID():
         readTimes[uidStr] = now
         return processCard(uidStr, now)
 
-    if (datetime.now() - readTimes[uidStr]).seconds > TIMEOUT_SECONDS:
-        processCard(uidStr, now)
+    if (datetime.now() - readTimes[uidStr]).total_seconds > TIMEOUT_SECONDS:
+        readTimes[uidStr] = now
+        return processCard(uidStr, now)
 
     readTimes[uidStr] = now
 
 
 def processCard(uid: str, now: datetime):
     print(f"Card read: {uid} at {now.strftime('%Y-%m-%d %H:%M:%S')}")
-    GPIO.output(buzzerPin, GPIO.HIGH)
-    time.sleep(0.1)
     GPIO.output(buzzerPin, GPIO.LOW)
+    time.sleep(0.1)
+    GPIO.output(buzzerPin, GPIO.HIGH)
 
     for led in [led1, led2, led3, led4]:
         GPIO.output(led, GPIO.HIGH)

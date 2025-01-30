@@ -28,7 +28,6 @@
     margin-bottom: 10px;
   }
   
-  /* Form */
   .form {
     display: flex;
     flex-direction: column;
@@ -61,7 +60,6 @@
     font-size: 0.875rem;
   }
   
-  /* Buttons */
   .btn {
     padding: 10px 20px;
     font-size: 1rem;
