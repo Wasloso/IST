@@ -1,8 +1,4 @@
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 public class Grid {
     public static void main(String[] args) {
@@ -45,7 +41,7 @@ public class Grid {
         int bgColor = Utils.int2RGB(r_bg, g_bg, b_bg);
         for (int y = 0; y < y_res; y++) {
             for (int x = 0; x < x_res; x++) {
-                if (x % x_spacing < width || y % y_spacing < width) {
+                if ((x % (x_spacing + width)) < width || (y % (y_spacing + width)) < width) {
                     image.setRGB(x, y, gridColor);
                 } else {
                     image.setRGB(x, y, bgColor);
