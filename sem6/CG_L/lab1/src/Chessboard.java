@@ -3,9 +3,8 @@ import java.awt.image.*;
 public class Chessboard {
     public static void main(String[] args) {
         BufferedImage image;
-        boolean even = false;
 
-        int x_res, y_res, size, r_even, g_even, b_even, r_odd, b_odd, g_odd, color_even, color_odd;
+        int x_res, y_res, size, r_even, g_even, b_even, r_odd, b_odd, g_odd;
 
         x_res = Integer.parseInt(args[0].trim());
         y_res = Integer.parseInt(args[1].trim());
@@ -16,16 +15,25 @@ public class Chessboard {
         r_odd = Integer.parseInt(args[6].trim());
         g_odd = Integer.parseInt(args[7].trim());
         b_odd = Integer.parseInt(args[8].trim());
-        color_even = Utils.int2RGB(r_even, g_even, b_even);
-        color_odd = Utils.int2RGB(r_odd, g_odd, b_odd);
 
         if (!Utils.validateRes(x_res, y_res)) {
             System.out.println("Invalid resolution");
             return;
         }
 
-        image = new BufferedImage(x_res, y_res,
+        image = fromParams(x_res, y_res, size, r_even, g_even, b_even, r_odd, g_odd, b_odd);
+
+        Utils.saveToFile(image, "chessboard.bmp");
+    }
+
+    static BufferedImage fromParams(int x_res, int y_res, int size, int r_even, int g_even, int b_even, int r_odd,
+            int g_odd, int b_odd) {
+        BufferedImage image = new BufferedImage(x_res, y_res,
                 BufferedImage.TYPE_INT_RGB);
+        int color_even = Utils.int2RGB(r_even, g_even, b_even);
+        int color_odd = Utils.int2RGB(r_odd, g_odd, b_odd);
+
+        boolean even = false;
 
         for (int y = 0; y < y_res; y++) {
             if (y % size == 0)
@@ -37,7 +45,7 @@ public class Chessboard {
 
             }
         }
+        return image;
 
-        Utils.saveToFile(image, "chessboard.bmp");
     }
 }

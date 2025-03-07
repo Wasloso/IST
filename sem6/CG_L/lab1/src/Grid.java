@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 
 public class Grid {
     public static void main(String[] args) {
-        System.out.println("Ring pattern synthesis");
+        System.out.println("Grid pattern synthesis");
 
         BufferedImage image;
 
@@ -31,12 +31,18 @@ public class Grid {
             System.out.println("Width or spacing out of bounds");
             return;
         }
-        image = new BufferedImage(x_res, y_res,
-                BufferedImage.TYPE_INT_RGB);
+        image = fromParams(x_res, y_res, width, x_spacing, y_spacing, r_grid, g_grid, b_grid, r_bg, g_bg, b_bg);
 
+        Utils.saveToFile(image, "grid.bmp");
+
+    }
+
+    static BufferedImage fromParams(int x_res, int y_res, int width, int x_spacing, int y_spacing, int r_grid,
+            int g_grid, int b_grid, int r_bg, int g_bg, int b_bg) {
+        BufferedImage image = new BufferedImage(x_res, y_res,
+                BufferedImage.TYPE_INT_RGB);
         int gridColor = Utils.int2RGB(r_grid, g_grid, b_grid);
         int bgColor = Utils.int2RGB(r_bg, g_bg, b_bg);
-
         for (int y = 0; y < y_res; y++) {
             for (int x = 0; x < x_res; x++) {
                 if (x % x_spacing < width || y % y_spacing < width) {
@@ -46,12 +52,8 @@ public class Grid {
                 }
             }
         }
-        try {
-            ImageIO.write(image, "bmp", new File("grid.bmp"));
-            System.out.println("Grid image created successfully");
-        } catch (IOException e) {
-            System.out.println("The image cannot be stored");
-        }
+
+        return image;
 
     }
 }

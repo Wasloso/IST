@@ -6,41 +6,34 @@ public class GrayRings {
     public static void main(String[] args) {
         System.out.println("Ring pattern synthesis");
 
-        BufferedImage image;
-
         int x_res, y_res;
-
-        int x_c, y_c;
-
-        int i, j;
 
         final int w = 10;
 
         x_res = Integer.parseInt(args[0].trim());
         y_res = Integer.parseInt(args[1].trim());
 
-        image = new BufferedImage(x_res, y_res,
+        BufferedImage image = fromParams(x_res, y_res, w);
+
+        Utils.saveToFile(image, "grayrings.bmp");
+    }
+
+    static BufferedImage fromParams(int x_res, int y_res, int width) {
+        BufferedImage image = new BufferedImage(x_res, y_res,
                 BufferedImage.TYPE_INT_RGB);
 
-        x_c = x_res / 2;
-        y_c = y_res / 2;
+        int x_c = x_res / 2;
+        int y_c = y_res / 2;
 
-        for (i = 0; i < y_res; i++) {
-            for (j = 0; j < x_res; j++) {
-                double d = Math.sqrt((i - y_c) * (i - y_c) + (j - x_c) * (j - x_c));
-                int intensity = (int) Utils.intensity(d, w);
+        for (int y = 0; y < y_res; y++) {
+            for (int x = 0; x < x_res; x++) {
+                double d = Math.sqrt((y - y_c) * (y - y_c) + (x - x_c) * (x - x_c));
+                int intensity = (int) Utils.intensity(d, width);
                 int gray = Utils.int2RGB(intensity, intensity, intensity);
-                image.setRGB(j, i, gray);
-
+                image.setRGB(x, y, gray);
             }
         }
-
-        try {
-            ImageIO.write(image, "bmp", new File(args[2]));
-            System.out.println("Ring image created successfully");
-        } catch (IOException e) {
-            System.out.println("The image cannot be stored");
-        }
+        return image;
     }
 
 }
