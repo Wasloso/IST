@@ -14,9 +14,25 @@ public class Mask {
         int g = Integer.parseInt(args[3].trim());
         int b = Integer.parseInt(args[4].trim());
         int color = Utils.int2RGB(r, g, b);
-        BufferedImage mask = null;
         int x_res = image.getWidth(), y_res = image.getHeight();
+        BufferedImage mask = buildMask(pattern, x_res, y_res);
 
+        for (int y = 0; y < y_res; y++) {
+            for (int x = 0; x < x_res; x++) {
+                int maskPixel = mask.getRGB(x, y);
+                ColorEnum colorEnum = ColorEnum.fromColor(maskPixel);
+
+                if (colorEnum == ColorEnum.black) {
+                    image.setRGB(x, y, color);
+                }
+            }
+        }
+
+        Utils.saveToFile(image, "mask.bmp");
+    }
+
+    static BufferedImage buildMask(PatternEnum pattern, int x_res, int y_res) throws IllegalStateException {
+        BufferedImage mask;
         switch (pattern) {
             case chessboard:
                 mask = Chessboard.fromParams(x_res, y_res, 5, 0, 0, 0, 255, 255, 255);
@@ -28,40 +44,10 @@ public class Mask {
                 mask = GrayRings.fromParams(x_res, y_res, 15, false);
                 break;
             default:
-                throw new IllegalStateException("Mask could not be created");
+                throw new IllegalStateException("Mask could not be created, use chessboard, grid, rings");
 
         }
+        return mask;
 
-        for (int y = 0; y < y_res; y++) {
-            for (int x = 0; x < x_res; x++) {
-                int maskPixel = mask.getRGB(x, y);
-
-                int maskR = (maskPixel >> 16) & 0xFF;
-                int maskG = (maskPixel >> 8) & 0xFF;
-                int maskB = maskPixel & 0xFF;
-
-                if (maskR == 0 && maskG == 0 && maskB == 0) {
-                    image.setRGB(x, y, color);
-                }
-            }
-        }
-
-        Utils.saveToFile(image, "mask.bmp");
-    }
-
-    private enum PatternEnum {
-        grid,
-        rings,
-        chessboard;
-
-        static PatternEnum fromString(String s) {
-            return switch (s) {
-                case "grid" -> PatternEnum.grid;
-                case "rings" -> PatternEnum.rings;
-                case "chessboard" -> PatternEnum.chessboard;
-                default -> throw new IllegalArgumentException(
-                        "Invalid pattern: " + s + "\nUse either grid, rings or chessboard");
-            };
-        }
     }
 }
