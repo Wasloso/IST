@@ -22,14 +22,14 @@ public class Mask {
                 mask = Chessboard.fromParams(x_res, y_res, 5, 0, 0, 0, 255, 255, 255);
                 break;
             case grid:
-                mask = Grid.fromParams(x_res, y_res, 10, 11, 25, 0, 0, 0, 255, 255, 255);
+                mask = Grid.fromParams(x_res, y_res, 10, 5, 50, 0, 0, 0, 255, 255, 255);
                 break;
             case rings:
                 mask = GrayRings.fromParams(x_res, y_res, 15, false);
                 break;
-        }
-        if (mask == null) {
-            throw new IllegalStateException("Mask could not be created");
+            default:
+                throw new IllegalStateException("Mask could not be created");
+
         }
 
         for (int y = 0; y < y_res; y++) {
