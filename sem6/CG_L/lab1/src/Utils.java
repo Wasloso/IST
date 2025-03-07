@@ -31,4 +31,13 @@ public class Utils {
         }
     }
 
+    static BufferedImage imageFromPath(String path) {
+        try {
+            return ImageIO.read(new File(path));
+        } catch (IOException e) {
+            System.out.println("The image cannot be read");
+            return null;
+        }
+    }
+
 }
