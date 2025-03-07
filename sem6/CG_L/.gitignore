@@ -1,2 +1,5 @@
 pomoc/
-*/*.pdf
+*.pdf
+*.bmp
+*.class
+*/.vscode/
