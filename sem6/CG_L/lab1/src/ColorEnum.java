@@ -1,3 +1,4 @@
+// Created before I learned that there's built-in Color class in java
 public enum ColorEnum {
     black, white, undefined;
 

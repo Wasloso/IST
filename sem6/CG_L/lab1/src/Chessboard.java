@@ -5,6 +5,7 @@ public class Chessboard {
         BufferedImage image;
 
         int x_res, y_res, size, r_even, g_even, b_even, r_odd, b_odd, g_odd;
+        String filename;
 
         x_res = Integer.parseInt(args[0].trim());
         y_res = Integer.parseInt(args[1].trim());
@@ -15,6 +16,7 @@ public class Chessboard {
         r_odd = Integer.parseInt(args[6].trim());
         g_odd = Integer.parseInt(args[7].trim());
         b_odd = Integer.parseInt(args[8].trim());
+        filename = args[9].trim();
 
         if (!Utils.validateRes(x_res, y_res)) {
             System.out.println("Invalid resolution");
@@ -23,7 +25,7 @@ public class Chessboard {
 
         image = fromParams(x_res, y_res, size, r_even, g_even, b_even, r_odd, g_odd, b_odd);
 
-        Utils.saveToFile(image, "chessboard.bmp");
+        Utils.saveToFile(image, filename);
     }
 
     static BufferedImage fromParams(int x_res, int y_res, int size, int r_even, int g_even, int b_even, int r_odd,

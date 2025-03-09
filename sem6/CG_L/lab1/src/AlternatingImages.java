@@ -1,10 +1,10 @@
-import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 public class AlternatingImages {
     public static void main(String[] args) {
         String imagePath1 = args[0].trim();
         String imagePath2 = args[1].trim();
+        String outputFile = args[3].trim();
         PatternEnum pattern = PatternEnum.fromString(args[2].trim());
         BufferedImage image1 = Utils.imageFromPath(imagePath1);
         BufferedImage image2 = Utils.imageFromPath(imagePath2);
@@ -29,7 +29,7 @@ public class AlternatingImages {
 
             }
         }
-        Utils.saveToFile(outputImage, "alternatingImages.bmp");
+        Utils.saveToFile(outputImage, outputFile);
 
     }
 

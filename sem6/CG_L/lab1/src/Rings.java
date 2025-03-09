@@ -1,23 +1,20 @@
-import java.io.*;
 import java.awt.image.*;
-import javax.imageio.*;
 
-public class GrayRings {
+public class Rings {
     public static void main(String[] args) {
-        System.out.println("Ring pattern synthesis");
-
-        int x_res, y_res;
 
         final int w = 10;
 
-        x_res = Integer.parseInt(args[0].trim());
-        y_res = Integer.parseInt(args[1].trim());
+        int x_res = Integer.parseInt(args[0].trim());
+        int y_res = Integer.parseInt(args[1].trim());
+        String outputFile = args[2].trim();
 
         BufferedImage image = fromParams(x_res, y_res, w);
 
-        Utils.saveToFile(image, "grayrings.bmp");
+        Utils.saveToFile(image, outputFile);
     }
 
+    // Just for default blur parameter
     static BufferedImage fromParams(int x_res, int y_res, int width) {
         return fromParams(x_res, y_res, width, true);
     }

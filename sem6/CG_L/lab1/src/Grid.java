@@ -7,6 +7,7 @@ public class Grid {
         BufferedImage image;
 
         int x_res, y_res, width, x_spacing, y_spacing, r_grid, g_grid, b_grid, r_bg, g_bg, b_bg;
+        String outputFile;
 
         x_res = Integer.parseInt(args[0].trim());
         y_res = Integer.parseInt(args[1].trim());
@@ -19,6 +20,7 @@ public class Grid {
         r_bg = Integer.parseInt(args[8].trim());
         g_bg = Integer.parseInt(args[9].trim());
         b_bg = Integer.parseInt(args[10].trim());
+        outputFile = args[11].trim();
         if (!Utils.validateRes(x_res, y_res)) {
             System.out.println("Resolution out of bounds");
             return;
@@ -29,7 +31,7 @@ public class Grid {
         }
         image = fromParams(x_res, y_res, width, x_spacing, y_spacing, r_grid, g_grid, b_grid, r_bg, g_bg, b_bg);
 
-        Utils.saveToFile(image, "grid.bmp");
+        Utils.saveToFile(image, outputFile);
 
     }
 

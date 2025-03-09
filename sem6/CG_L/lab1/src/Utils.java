@@ -23,8 +23,12 @@ public class Utils {
     }
 
     static void saveToFile(RenderedImage image, String path) {
+        File outputDir = new File("output");
+        if (!outputDir.exists()) {
+            outputDir.mkdirs();
+        }
         try {
-            ImageIO.write(image, "bmp", new File(path));
+            ImageIO.write(image, "bmp", new File(outputDir, path));
             System.out.println("Image created successfully");
         } catch (IOException e) {
             System.out.println("The image cannot be stored");

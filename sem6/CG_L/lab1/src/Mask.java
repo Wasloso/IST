@@ -1,8 +1,4 @@
-import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
-
-import javax.imageio.ImageIO;
 
 public class Mask {
 
@@ -13,6 +9,7 @@ public class Mask {
         int r = Integer.parseInt(args[2].trim());
         int g = Integer.parseInt(args[3].trim());
         int b = Integer.parseInt(args[4].trim());
+        String outputFile = args[5].trim();
         int color = Utils.int2RGB(r, g, b);
         int x_res = image.getWidth(), y_res = image.getHeight();
         BufferedImage mask = buildMask(pattern, x_res, y_res);
@@ -28,7 +25,7 @@ public class Mask {
             }
         }
 
-        Utils.saveToFile(image, "mask.bmp");
+        Utils.saveToFile(image, outputFile);
     }
 
     static BufferedImage buildMask(PatternEnum pattern, int x_res, int y_res) throws IllegalStateException {
@@ -38,10 +35,10 @@ public class Mask {
                 mask = Chessboard.fromParams(x_res, y_res, 5, 0, 0, 0, 255, 255, 255);
                 break;
             case grid:
-                mask = Grid.fromParams(x_res, y_res, 10, 5, 50, 0, 0, 0, 255, 255, 255);
+                mask = Grid.fromParams(x_res, y_res, 10, 25, 75, 0, 0, 0, 255, 255, 255);
                 break;
             case rings:
-                mask = GrayRings.fromParams(x_res, y_res, 15, false);
+                mask = Rings.fromParams(x_res, y_res, 15, false);
                 break;
             default:
                 throw new IllegalStateException("Mask could not be created, use chessboard, grid, rings");
