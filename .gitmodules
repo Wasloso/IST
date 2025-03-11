@@ -4,3 +4,6 @@
 [submodule "sem5/DataBases_P/mongodb_datafaker"]
 	path = sem5/DataBases_P/mongodb_datafaker
 	url = https://github.com/Wasloso/mongodb_datafaker.git
+[submodule "sem6/uni-cloud-development"]
+	path = sem6/uni-cloud-development
+	url = https://github.com/lmProgramming/uni-cloud-development.git
