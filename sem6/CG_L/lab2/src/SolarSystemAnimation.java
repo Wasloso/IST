@@ -6,11 +6,11 @@ class SolarSystemPanel extends JPanel {
 
     private final CelestialBody sun = new CelestialBody(50, Color.YELLOW, 400, 400);
     private final CelestialBody mercury = new CelestialBody(39, 8, 0.1, Color.ORANGE, sun);
-    private final CelestialBody venus = new CelestialBody(72, 10, 0.1, Color.RED, sun);
+    private final CelestialBody venus = new CelestialBody(72, 10, 0.1, new Color(219, 37, 32), sun);
     private final CelestialBody earth = new CelestialBody(100, 15, 0.1, Color.BLUE, sun);
     private final CelestialBody moon = new CelestialBody(20, 8, 1, Color.LIGHT_GRAY, earth);
     private final CelestialBody mars = new CelestialBody(152, 12, 0.1, Color.RED, sun);
-    private final CelestialBody jupiter = new CelestialBody(200, 25, 0.05, Color.DARK_GRAY, sun);
+    private final CelestialBody jupiter = new CelestialBody(200, 25, 0.05, new Color(238, 158, 58), sun);
     private final CelestialBody saturn = new CelestialBody(250, 22, 0.04, Color.DARK_GRAY, sun);
     private final CelestialBody uranus = new CelestialBody(300, 20, 0.03, Color.GREEN, sun);
     private final CelestialBody neptune = new CelestialBody(350, 18, 0.02, Color.CYAN, sun);
