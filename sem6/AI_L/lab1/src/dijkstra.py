@@ -1,5 +1,5 @@
 import pandas as pd
-from .priority_queue import PriorityQueue
+from .queues import PriorityQueue
 from .connection import Connection
 from .graph import MyGraph
 from .utils import (

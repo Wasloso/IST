@@ -1,5 +1,5 @@
 import pandas as pd
-from .priority_queue import PriorityQueue
+from .queues import PriorityQueue
 from .connection import Connection
 from .graph import MyGraph
 from .utils import (
@@ -34,9 +34,9 @@ def astar(
     start: str,
     end: str,
     start_time: pd.Timestamp,
-    opt_changes: bool = True,
+    opt_changes: bool = False,
     line_change_cost: int = 250,
-) -> list:
+) -> list[Connection]:
     queue: PriorityQueue[str] = PriorityQueue[str]()
     queue.put(start, 0)
     path: dict[str, tuple[str, Connection]] = {start: None}

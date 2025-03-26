@@ -1,5 +1,8 @@
+import sys
 import pandas as pd
 from tabulate import tabulate
+
+from .graph import MyGraph
 from .connection import Connection
 
 
@@ -90,6 +93,25 @@ def calculate_running_time(func):
     return wrapper
 
 
+def cache_cost_function():
+    cost_cache = {}
+
+    def decorator(func):
+        @wraps(func)
+        def wrapper(graph, path, start_time, opt_changes=False):
+            key = (tuple(path), start_time, opt_changes)
+            if key in cost_cache:
+                print("Cache hit ", cost_cache[key])
+                return cost_cache[key]
+            result = func(graph, path, start_time, opt_changes)
+            cost_cache[key] = result
+            return result
+
+        return wrapper
+
+    return decorator
+
+
 def pretty_print(
     connections: list[Connection],
     time_cost: float,
@@ -110,13 +132,61 @@ def pretty_print(
                 connection.stop_name,
             ]
         )
-    print("\nSummary:")
+
+    headers = ["Line", "Departure Time", "From Stop", "Arrival Time", "To Stop"]
+
+    sys.stdout.write(tabulate(rows, headers=headers, tablefmt="pretty"))
+
     summary_rows = [
         ["Time cost (minutes)", f"{time_cost:.1f}"],
         ["Lines cost (line changes)", lines_cost],
         ["Algorithm running time (seconds)", f"{total_running_time:.3f}"],
     ]
-    print(tabulate(summary_rows, tablefmt="pretty"))
 
-    headers = ["Line", "Departure Time", "From Stop", "Arrival Time", "To Stop"]
-    print(tabulate(rows, headers=headers, tablefmt="pretty"))
+    sys.stderr.write("\nSummary:\n")
+    sys.stderr.write(tabulate(summary_rows, tablefmt="pretty"))
+    sys.stderr.write("\n")
+
+
+def validate_input(
+    graph: MyGraph,
+    start: str = None,
+    end: str = None,
+    algorithm: str = None,
+    time: str = None,
+    optimize: str = None,
+):
+    if start and end and (start := start.lower()) == (end := end.lower()):
+        raise ValueError("Start and end stops must be different")
+    if start and (start := start.lower()) not in graph:
+        raise ValueError(f"Node {start} not in graph")
+    if end and (end := end.lower()) not in graph:
+        raise ValueError(f"Node {end} not in graph")
+    if algorithm and (algorithm := algorithm.lower()) not in ["d", "a", "t"]:
+        raise ValueError(f"Algorithm {algorithm} not in ['d', 'a','t']")
+    if optimize and (optimize := optimize.lower()) not in ["t", "p"]:
+        raise ValueError(f"Optimize {optimize} not in ['t', 'p']")
+    else:
+        if optimize == "p":
+            optimize = True
+        else:
+            optimize = False
+
+    if time:
+        try:
+            time = pd.to_datetime(time, format="%H:%M")
+        except ValueError:
+            raise ValueError(f"Time {time} not in format HH:MM")
+
+    return start, end, algorithm, time, optimize
+
+
+def format_input(
+    start: str, end: str, algorithm: str, time: str, opt_changes: str
+) -> tuple:
+    start = start.lower()
+    end = end.lower()
+    algorithm = algorithm.lower()
+    time = pd.to_datetime(time, format="%H:%M")
+    opt_changes = True if opt_changes.lower() == "p" else False
+    return start, end, algorithm, time, opt_changes

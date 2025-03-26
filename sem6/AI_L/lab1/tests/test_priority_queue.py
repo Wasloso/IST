@@ -1,5 +1,5 @@
 import pytest
-from src.priority_queue import (
+from src.queues import (
     PriorityQueue,
 )  #
 
