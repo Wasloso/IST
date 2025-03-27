@@ -44,7 +44,6 @@ def dijkstra(graph: MyGraph, start: str, end: str, start_time: pd.Timestamp) -> 
                 arrival_times[neighbour] = connection.arrival_time
                 queue.put(neighbour, tentative_g_score)
 
-    if end not in path:
-        return []
+    graph.reset_visited()
 
-    return reconstruct_path(path, start, end)
+    return reconstruct_path(path, start, end) if end in path else []

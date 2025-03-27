@@ -15,7 +15,6 @@ from .utils import (
 from math import radians, sin, cos, sqrt, atan2
 
 
-@lru_cache(maxsize=None)
 def heuristic(
     pos_start: tuple[float, float], pos_end: tuple[float, float], travel_speed=10
 ) -> float:
@@ -24,26 +23,6 @@ def heuristic(
     a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
     distance = EARTH_RADIUS * 2 * atan2(sqrt(a), sqrt(1 - a))
     return (distance / travel_speed) * 60
-
-
-def process_neighbor(args):
-    (
-        neighbour,
-        edges,
-        current_arrival_time,
-        current_line,
-        line_change_cost,
-        opt_changes,
-    ) = args
-    connections = [data["data"] for data in edges.values()]
-    connection, cost = get_best_connection(
-        current_arrival_time,
-        connections,
-        current_line,
-        line_change_cost,
-        opt_changes,
-    )
-    return neighbour, connection, cost
 
 
 @calculate_running_time
@@ -71,10 +50,8 @@ def astar(
 
     while not queue.empty():
         current = queue.get()
-
         if current == end:
             break
-
         current_line = lines[current]
         current_arrival_time = arrival_times[current]
 
@@ -102,4 +79,5 @@ def astar(
                 f_score = tentative_g_score + heuristic(current_pos, end_pos)
                 queue.put(neighbour, f_score)
 
+    graph.reset_visited()
     return reconstruct_path(path, start, end) if end in path else []

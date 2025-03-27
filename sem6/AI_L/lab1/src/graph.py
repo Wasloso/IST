@@ -40,17 +40,35 @@ class MyGraph(nx.MultiDiGraph):
 
             if start_name not in nodes:
                 self.add_node(
-                    start_name, data=(row[START_STOP_LAT], row[START_STOP_LON])
+                    start_name,
+                    data=(row[START_STOP_LAT], row[START_STOP_LON]),
+                    visited=False,
                 )
                 nodes.add(start_name)
 
             if end_name not in nodes:
-                self.add_node(end_name, data=(row[END_STOP_LAT], row[END_STOP_LON]))
+                self.add_node(
+                    end_name, data=(row[END_STOP_LAT], row[END_STOP_LON]), visited=False
+                )
                 nodes.add(end_name)
 
             self.add_edge(
                 start_name, end_name, data=connection, weight=connection.travel_time
             )
+
+    def reset_visited(self):
+        for node in self.nodes:
+            self.nodes[node]["visited"] = False
+
+    def neighbors(self, n):
+        neighbors = [
+            neighbor
+            for neighbor in super().neighbors(n)
+            if self.nodes[neighbor]["visited"] == False
+        ]
+        for neighbor in neighbors:
+            self.nodes[neighbor]["visited"] = True
+        return neighbors
 
     def normalize_time(self, time: str) -> str:
         hour, minute, second = map(int, time.split(":"))
