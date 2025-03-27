@@ -28,14 +28,18 @@ def calculate_tabu_cost(
     current_time: pd.Timestamp = start_time
     found_path: list[Connection] = []
     result_path: list[Connection] = []
-
+    stops_to_visit = set(path[1:-1])
+    # TODO: add check if stop was visited
     for i in range(len(path) - 1):
+        start_stop = path[i]
+        end_stop = path[i + 1]
         found_path = astar(graph, path[i], path[i + 1], current_time, opt_changes)[0]
         result_path += found_path
         time_cost, lines_cost = calculate_total_cost(found_path, current_time)
         total_time_cost += time_cost
         total_lines_cost += lines_cost
         current_time = found_path[-1].arrival_time
+
     return total_time_cost, total_lines_cost, result_path
 
 
@@ -117,7 +121,6 @@ def tabu(
             aspiration_value = best_cost * 1.05 + 0.1 * (
                 len(history.elements) - modification_count
             )
-            print(f"Best cost: {best_cost}, Aspiration: {aspiration_value}")
             if tuple(neighbor) in tabu_set and fitness >= aspiration_value:
                 continue
 

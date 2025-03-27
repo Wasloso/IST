@@ -63,52 +63,43 @@ def astar(
     queue.put(start, 0)
 
     path = {start: None}
-    g_score = {start: 0}
+    g_score = {start: heuristic(graph.nodes[start]["data"], graph.nodes[end]["data"])}
     arrival_times = {start: start_time}
     lines = {start: None}
 
     end_pos = graph.nodes[end]["data"]
 
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        while not queue.empty():
-            current = queue.get()
+    while not queue.empty():
+        current = queue.get()
 
-            if current == end:
-                break
+        if current == end:
+            break
 
-            current_line = lines[current]
-            current_arrival_time = arrival_times[current]
-            edge_data = graph[current]
+        current_line = lines[current]
+        current_arrival_time = arrival_times[current]
 
-            args = [
-                (
-                    neighbour,
-                    edges,
-                    current_arrival_time,
-                    current_line,
-                    line_change_cost,
-                    opt_changes,
-                )
-                for neighbour, edges in edge_data.items()
-            ]
+        for neighbour in graph.neighbors(current):
 
-            results = list(executor.map(process_neighbor, args))
+            connection, score, _, _ = graph.find_best_connection(
+                current,
+                neighbour,
+                current_arrival_time,
+                line=current_line,
+                line_change_cost=line_change_cost,
+                opt_changes=opt_changes,
+            )
+            if connection is None:
+                continue
 
-            for neighbour, connection, cost in results:
-                if connection is None:
-                    continue
+            tentative_g_score = g_score[current] + score
 
-                tentative_g_score = g_score[current] + cost
-
-                if neighbour not in g_score or tentative_g_score < g_score[neighbour]:
-                    path[neighbour] = (current, connection)
-                    arrival_times[neighbour] = connection.arrival_time
-                    lines[neighbour] = connection.line
-                    g_score[neighbour] = tentative_g_score
-
-                    current_pos = graph.nodes[current]["data"]
-                    f_score = tentative_g_score + heuristic(current_pos, end_pos)
-
-                    queue.put(neighbour, f_score)
+            if neighbour not in g_score or tentative_g_score < g_score[neighbour]:
+                path[neighbour] = (current, connection)
+                arrival_times[neighbour] = connection.arrival_time
+                lines[neighbour] = connection.line
+                g_score[neighbour] = tentative_g_score
+                current_pos = graph.nodes[current]["data"]
+                f_score = tentative_g_score + heuristic(current_pos, end_pos)
+                queue.put(neighbour, f_score)
 
     return reconstruct_path(path, start, end) if end in path else []

@@ -13,23 +13,6 @@ def calculate_wait_time(
     return delta if delta >= 0 else delta + 1440
 
 
-def get_optimal_connection_by_time(
-    current_time: pd.Timestamp, connections: dict[int, dict[Connection, int]]
-) -> tuple:
-    best_connection: Connection = None
-    best_cost = float("inf")
-
-    for _, edge in connections.items():
-        connection: Connection = edge["data"]
-        wait_time = calculate_wait_time(current_time, connection.departure_time)
-
-        if wait_time < best_cost:
-            best_connection = connection
-            best_cost = wait_time
-
-    return best_connection, best_connection.travel_time
-
-
 def get_best_connection(
     current_time: pd.Timestamp,
     connections: list[Connection],
@@ -98,7 +81,6 @@ def cache_cost_function():
         def wrapper(graph, path, start_time, opt_changes=False):
             key = (tuple(path), start_time, opt_changes)
             if key in cost_cache:
-                print("Cache hit ", cost_cache[key])
                 return cost_cache[key]
             result = func(graph, path, start_time, opt_changes)
             cost_cache[key] = result

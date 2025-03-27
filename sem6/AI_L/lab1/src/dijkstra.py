@@ -24,25 +24,25 @@ def dijkstra(graph: MyGraph, start: str, end: str, start_time: pd.Timestamp) -> 
         if current == end:
             break
 
+        current_arrival_time = arrival_times[current]
         for neighbour in graph.neighbors(current):
-            current_arrival_time = arrival_times[current]
 
-            connections = (
-                data["data"]
-                for data in graph.get_edge_data(current, neighbour).values()
+            connection, score, _, _ = graph.find_best_connection(
+                current,
+                neighbour,
+                current_arrival_time,
             )
-            connection, cost = get_best_connection(current_arrival_time, connections)
 
             if connection is None:
                 continue
 
-            new_cost = total_cost[current] + cost
+            tentative_g_score = total_cost[current] + score
 
-            if neighbour not in total_cost or new_cost < total_cost[neighbour]:
-                total_cost[neighbour] = new_cost
+            if neighbour not in total_cost or tentative_g_score < total_cost[neighbour]:
+                total_cost[neighbour] = tentative_g_score
                 path[neighbour] = (current, connection)
                 arrival_times[neighbour] = connection.arrival_time
-                queue.put(neighbour, new_cost)
+                queue.put(neighbour, tentative_g_score)
 
     if end not in path:
         return []
