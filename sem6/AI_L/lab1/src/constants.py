@@ -8,3 +8,4 @@ START_STOP_LAT = "start_stop_lat"
 START_STOP_LON = "start_stop_lon"
 END_STOP_LAT = "end_stop_lat"
 END_STOP_LON = "end_stop_lon"
+EARTH_RADIUS = 6371
