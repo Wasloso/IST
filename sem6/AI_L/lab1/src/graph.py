@@ -21,12 +21,13 @@ class MyGraph(nx.MultiDiGraph):
         df[DEPARTURE_TIME] = pd.to_datetime(df[DEPARTURE_TIME], format="%H:%M:%S")
         df[ARRIVAL_TIME] = pd.to_datetime(df[ARRIVAL_TIME], format="%H:%M:%S")
 
+        nodes = set(self.nodes)
+
         for i, row in df.iterrows():
             if take is not None and i >= take:
                 break
 
-            start_name = row[START_STOP].lower()
-            end_name = row[END_STOP].lower()
+            start_name, end_name = row[START_STOP].lower(), row[END_STOP].lower()
 
             connection = Connection(
                 company=row[COMPANY],
@@ -37,18 +38,18 @@ class MyGraph(nx.MultiDiGraph):
                 stop=end_name,
             )
 
-            if start_name not in self:
+            if start_name not in nodes:
                 self.add_node(
                     start_name, data=(row[START_STOP_LAT], row[START_STOP_LON])
                 )
-            if end_name not in self:
+                nodes.add(start_name)
+
+            if end_name not in nodes:
                 self.add_node(end_name, data=(row[END_STOP_LAT], row[END_STOP_LON]))
+                nodes.add(end_name)
 
             self.add_edge(
-                start_name,
-                end_name,
-                data=connection,
-                weight=connection.travel_time,
+                start_name, end_name, data=connection, weight=connection.travel_time
             )
 
     def normalize_time(self, time: str) -> str:
