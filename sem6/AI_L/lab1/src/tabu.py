@@ -45,9 +45,9 @@ def adaptive_sample_neighbours(
     all_neighbours = generate_neighbours_insert_move(path)
 
     if no_improvement_count > max_no_improvement:
-        sample_size = min(25, len(all_neighbours))
+        sample_size = min(10, len(all_neighbours))
     else:
-        sample_size = max(10, len(all_neighbours) // 5)
+        sample_size = max(4, len(all_neighbours) // 5)
 
     return (
         random.sample(all_neighbours, sample_size)
