@@ -9,11 +9,8 @@ from .connection import Connection
 def calculate_wait_time(
     arrival_time: pd.Timestamp, departure_time: pd.Timestamp
 ) -> float:
-    if departure_time < arrival_time:
-        departure_time += pd.Timedelta(days=1)
-
     delta = (departure_time - arrival_time).total_seconds() / 60
-    return delta
+    return delta if delta >= 0 else delta + 1440
 
 
 def get_optimal_connection_by_time(
@@ -53,21 +50,21 @@ def get_best_connection(
         if cost < best_cost:
             best_connection = connection
             best_cost = cost
+
     return best_connection, best_cost
 
 
 def reconstruct_path(
     path: dict[str, tuple[str, Connection]], start: str, end: str
 ) -> list[Connection]:
-    node = end
-    result_path = []
-    lines: set = {}
-    while node is not None and path[node] is not None:
+    node, result_path = end, []
+
+    while (node is not None) and (path[node] is not None):
         prev_node, connection = path[node]
         result_path.append(connection)
         node = prev_node
-    result_path.reverse()
-    return result_path
+
+    return result_path[::-1]
 
 
 def calculate_total_cost(
@@ -127,9 +124,9 @@ def pretty_print(
             [
                 line_to_display,
                 connection.departure_time.time(),
-                connection.start_name,
+                connection.start,
                 connection.arrival_time.time(),
-                connection.stop_name,
+                connection.stop,
             ]
         )
 
