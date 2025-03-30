@@ -20,17 +20,17 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 class MenuBar extends JMenuBar {
     private Controller controller;
+
     public MenuBar(Controller controller) {
         this.controller = controller;
         initializeShapeButtons();
         initializeColorFields();
         initializeFileMenu();
         setLayout(new GridLayout());
-        
+
     }
 
-   
-    private void initializeShapeButtons(){
+    private void initializeShapeButtons() {
         JToggleButton lineItem = new JToggleButton(ShapeType.LINE.toString());
         JToggleButton circleItem = new JToggleButton(ShapeType.CIRCLE.toString());
         JToggleButton rectangleItem = new JToggleButton(ShapeType.RECTANGLE.toString());
@@ -44,7 +44,6 @@ class MenuBar extends JMenuBar {
             controller.setShapeType(ShapeType.RECTANGLE);
         });
 
-        
         ButtonGroup shapeGroup = new ButtonGroup();
         shapeGroup.add(lineItem);
         shapeGroup.add(circleItem);
@@ -54,7 +53,7 @@ class MenuBar extends JMenuBar {
         add(rectangleItem);
     }
 
-    private void initializeColorFields(){
+    private void initializeColorFields() {
         JTextField rField = new JTextField(3);
         rField.setText(controller.getR() + "");
         JTextField gField = new JTextField(3);
@@ -88,7 +87,6 @@ class MenuBar extends JMenuBar {
         add(bPanel);
 
     }
-    
 
     private FocusListener rgbFocusListener(Consumer<Integer> setter) {
         return new FocusAdapter() {
@@ -98,23 +96,23 @@ class MenuBar extends JMenuBar {
             }
         };
     }
-    
+
     private ActionListener rgbEnterListener(Consumer<Integer> setter) {
         return e -> validateAndUpdate((JTextField) e.getSource(), setter);
     }
-    
+
     private void validateAndUpdate(JTextField source, Consumer<Integer> setter) {
         int value;
         try {
             value = Integer.parseInt(source.getText().trim());
-            value = Math.max(0, Math.min(255, value)); 
+            value = Math.max(0, Math.min(255, value));
         } catch (NumberFormatException ex) {
-            value = 0; 
+            value = 0;
         }
-        source.setText(String.valueOf(value)); 
-        setter.accept(value); 
+        source.setText(String.valueOf(value));
+        setter.accept(value);
     }
-    
+
     private void initializeFileMenu() {
         JMenu fileMenu = new JMenu("File");
         JMenuItem saveItem = new JMenuItem("Save");
@@ -125,7 +123,8 @@ class MenuBar extends JMenuBar {
         saveItem.addActionListener(e -> saveToFile("vect"));
         loadItem.addActionListener(e -> loadFromFile("vect"));
         newItem.addActionListener(e -> {
-            int confirm = JOptionPane.showConfirmDialog(getParent(), "Are you sure you want to start a new drawing?", "Confirm", JOptionPane.YES_NO_OPTION);
+            int confirm = JOptionPane.showConfirmDialog(getParent(), "Are you sure you want to start a new drawing?",
+                    "Confirm", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
                 controller.clearShapes();
             }
@@ -144,6 +143,8 @@ class MenuBar extends JMenuBar {
         }
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileFilter(new FileNameExtensionFilter(extension, extension));
+        fileChooser.setCurrentDirectory(new File("."));
+        fileChooser.setAcceptAllFileFilterUsed(false);
 
         int returnValue = fileChooser.showSaveDialog(getParent());
         if (returnValue == JFileChooser.APPROVE_OPTION) {
@@ -151,14 +152,14 @@ class MenuBar extends JMenuBar {
             if (!selectedFile.getName().toLowerCase().endsWith("." + extension)) {
                 selectedFile = new File(selectedFile.getAbsolutePath() + "." + extension);
             }
-                        if (selectedFile.exists()) {
-                int overwrite = JOptionPane.showConfirmDialog(getParent(), 
-                    "File already exists. Overwrite?", "Confirm", JOptionPane.YES_NO_OPTION);
+            if (selectedFile.exists()) {
+                int overwrite = JOptionPane.showConfirmDialog(getParent(),
+                        "File already exists. Overwrite?", "Confirm", JOptionPane.YES_NO_OPTION);
                 if (overwrite != JOptionPane.YES_OPTION) {
                     return;
                 }
             }
-        
+
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(selectedFile, false))) {
                 for (Shape shape : controller.getShapes()) {
                     String serializedShape = shape.serialize();
@@ -166,55 +167,68 @@ class MenuBar extends JMenuBar {
                     writer.newLine();
                 }
                 writer.flush();
-                JOptionPane.showMessageDialog(getParent(), "Shapes saved successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(getParent(), "Shapes saved successfully.", "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(getParent(), "Error saving file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }}
-            
+                JOptionPane.showMessageDialog(getParent(), "Error saving file: " + e.getMessage(), "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
     }
 
     private void loadFromFile(String extension) {
         JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File("."));
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setFileFilter(new FileNameExtensionFilter(extension, extension));
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        fileChooser.setMultiSelectionEnabled(false);
         int returnValue = fileChooser.showOpenDialog(getParent());
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
             if (!selectedFile.getName().toLowerCase().endsWith("." + extension)) {
-                JOptionPane.showMessageDialog(getParent(), "Please select a ." + extension +" file", 
-                    "Invalid File", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(getParent(), "Please select a ." + extension + " file",
+                        "Invalid File", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            
+
             try {
                 ArrayList<Shape> shapes = new ArrayList<>();
                 Scanner scanner = new Scanner(selectedFile);
                 while (scanner.hasNextLine()) {
                     String line = scanner.nextLine();
-                    try{
+                    if (line.trim().isEmpty()) {
+                        continue;
+                    }
+                    try {
                         Shape shape = Shape.deserialize(line);
                         System.out.println(shape.serialize());
                         shapes.add(shape);
                     } catch (InvalidParameterException e) {
-                        JOptionPane.showMessageDialog(getParent(), "Invalid shape data: " + line, 
-                            "Error", JOptionPane.ERROR_MESSAGE);
-                        continue; 
+                        JOptionPane.showMessageDialog(getParent(), "Invalid shape data: " + line + "\nSkipping entry",
+                                "Error", JOptionPane.ERROR_MESSAGE);
+                        continue;
                     }
                 }
                 scanner.close();
                 controller.setShapes(shapes);
-                JOptionPane.showMessageDialog(getParent(), "Shapes loaded successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(getParent(), "Shapes loaded successfully.", "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
 
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(getParent(), "Error loading file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(getParent(), "Error loading file: " + e.getMessage(), "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
     }
-    
+
     private void exportToPng() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setFileFilter(new FileNameExtensionFilter("PNG", "png"));
+        fileChooser.setCurrentDirectory(new File("."));
+
         int returnValue = fileChooser.showSaveDialog(getParent());
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
@@ -222,8 +236,8 @@ class MenuBar extends JMenuBar {
                 selectedFile = new File(selectedFile.getAbsolutePath() + ".png");
             }
             if (selectedFile.exists()) {
-                int overwrite = JOptionPane.showConfirmDialog(getParent(), 
-                    "File already exists. Overwrite?", "Confirm", JOptionPane.YES_NO_OPTION);
+                int overwrite = JOptionPane.showConfirmDialog(getParent(),
+                        "File already exists. Overwrite?", "Confirm", JOptionPane.YES_NO_OPTION);
                 if (overwrite != JOptionPane.YES_OPTION) {
                     return;
                 }
@@ -231,14 +245,13 @@ class MenuBar extends JMenuBar {
             try {
                 BufferedImage image = controller.getImage();
                 ImageIO.write(image, "png", selectedFile);
-                JOptionPane.showMessageDialog(getParent(), "Exported to PNG successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(getParent(), "Exported to PNG successfully.", "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(getParent(), "Error exporting to PNG: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(getParent(), "Error exporting to PNG: " + e.getMessage(), "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
     }
-
-    
-
 
 }
