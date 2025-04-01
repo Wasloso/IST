@@ -3,12 +3,9 @@ package main;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
-import java.awt.geom.Point2D;
 import java.security.InvalidParameterException;
 
-import javax.swing.JComponent;
-
-public abstract class Shape extends JComponent {
+public abstract class Shape {
     public Point start;
     public Point end;
     public Point center;

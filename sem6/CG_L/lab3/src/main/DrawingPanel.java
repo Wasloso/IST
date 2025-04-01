@@ -4,11 +4,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 import javax.swing.JPanel;
 
@@ -26,25 +29,33 @@ class DrawingPanel extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
+                startPoint = e.getPoint();
                 for (Shape shape : controller.getShapes()) {
-                    selectedPoint = checkIsNearPoint(e.getPoint(), shape, 10);
+                    selectedPoint = checkIsNearPoint(startPoint, shape, 10);
                     if (selectedPoint == SelectedPoint.NONE)
                         continue;
                     if (selectedPoint == SelectedPoint.CENTER && e.getButton() == MouseEvent.BUTTON3) {
+                        drawXOR(shape, null, null);
                         controller.removeShape(shape);
                         return;
                     }
                     selectedShape = shape;
                     return;
                 }
-                startPoint = e.getPoint();
-                newShape = createNewShape(startPoint);
+                if (e.getButton() == MouseEvent.BUTTON1) {
+                    newShape = createNewShape(startPoint);
+                }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
                 if (newShape != null) {
-                    controller.addShape(newShape);
+                    if (newShape.getStart().equals(newShape.getEnd())) {
+                        newShape = null;
+
+                    } else {
+                        controller.addShape(newShape);
+                    }
                 }
                 selectedShape = null;
                 startPoint = null;
@@ -61,26 +72,36 @@ class DrawingPanel extends JPanel {
                 if (selectedShape != null) {
                     switch (selectedPoint) {
                         case START:
-                            selectedShape.updateStartPoint(newPoint);
+                            drawXOR(selectedShape, newPoint, selectedShape::updateStartPoint);
                             break;
                         case END:
-                            selectedShape.updateEndPoint(newPoint);
+                            drawXOR(selectedShape, newPoint, selectedShape::updateEndPoint);
                             break;
                         case CENTER:
-                            selectedShape.updateCenter(newPoint);
+                            drawXOR(selectedShape, newPoint, selectedShape::updateCenter);
                             break;
                         default:
                             break;
                     }
-                    repaint();
                     return;
                 }
                 if (newShape != null) {
-                    newShape.updateEndPoint(newPoint);
-                    repaint();
+                    drawXOR(newShape, newPoint, newShape::updateEndPoint);
                 }
             }
         });
+    }
+
+    private void drawXOR(Shape shape, Point newPoint, Consumer<Point> updateFunction) {
+
+        Graphics2D g2d = (Graphics2D) getGraphics();
+        g2d.setXORMode(Color.WHITE);
+        shape.draw(g2d);
+        if (updateFunction != null) {
+            updateFunction.accept(newPoint);
+            shape.draw(g2d);
+        }
+        g2d.setPaintMode();
     }
 
     private Shape createNewShape(Point startPoint) {
@@ -95,15 +116,13 @@ class DrawingPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
-
         for (Shape shape : controller.getShapes()) {
-
             shape.draw(g2d);
         }
+    }
 
-        if (newShape != null) {
-            newShape.draw(g2d);
-        }
+    public void initShapes() {
+        repaint();
     }
 
     private SelectedPoint checkIsNearPoint(Point point, Shape shape, int sensitivity) {
@@ -127,6 +146,7 @@ class DrawingPanel extends JPanel {
         g2d.dispose();
         return image;
     }
+
 }
 
 enum SelectedPoint {
