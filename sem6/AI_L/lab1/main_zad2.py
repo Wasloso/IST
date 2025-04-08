@@ -25,7 +25,7 @@ def main():
             continue
 
         (path, time_cost, lines_cost), running_time = tabu(
-            graph, start, time, to_visit, opt_changes, max_iters=5
+            graph, start, time, to_visit, opt_changes, max_iters=20
         )
 
         pretty_print(path, time_cost, lines_cost, running_time)

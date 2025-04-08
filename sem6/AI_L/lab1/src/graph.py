@@ -82,8 +82,9 @@ class MyGraph(nx.MultiDiGraph):
         end: str,
         current_time: pd.Timestamp,
         line: str = None,
-        line_change_cost: int = 250,
+        line_change_cost: int = 750,
         opt_changes: bool = False,
+        priority_lines: list[str] = None,
     ) -> tuple[Connection, float, int, int]:
         if start == end:
             return None, 0, 0, 0
@@ -101,9 +102,14 @@ class MyGraph(nx.MultiDiGraph):
                 self.calculate_wait_time(current_time, connection.departure_time)
                 + connection.travel_time
             )
-            line_cost = 1 if line and connection.line != line else 0
+            line_cost = 1 if line is not None and connection.line != line else 0
+            line_cost = (
+                0
+                if line is not None and connection.line in priority_lines
+                else line_cost
+            )
             cost = time_cost + (line_cost * line_change_cost)
-            if cost < best_cost:
+            if cost < best_cost or (cost == best_cost and connection.line == line):
                 best_connection = connection
                 best_cost = cost
                 best_time_cost = time_cost

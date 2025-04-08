@@ -103,7 +103,6 @@ def tabu(
 
     for _ in range(max_iters):
         neighbours = adaptive_sample_neighbours(current_path, no_improvement_count)
-        print(f"Neighbors to visit: {len(neighbours)}")
 
         best_neighbor = None
         best_neighbor_cost = float("inf")
@@ -150,6 +149,8 @@ def tabu(
         tabu_set.add(tuple(best_neighbor))
         queue.put(tuple(best_neighbor))
         if len(queue.elements) > tabu_size:
-            tabu_set.remove(queue.get())
+            removed = queue.get()
+            if removed in tabu_set:
+                tabu_set.remove(removed)
 
     return result_path, best_time_cost, best_lines_cost

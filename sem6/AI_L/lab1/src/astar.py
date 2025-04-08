@@ -25,6 +25,22 @@ def heuristic(
     return (distance / travel_speed) * 60
 
 
+def line_heuristic(
+    line,
+    end_lines: list[Connection],
+    current_line,
+    line_change_cost,
+) -> float:
+    if current_line in end_lines:
+        if current_line == line:
+            return 0
+        else:
+            return line_change_cost / 2
+    if current_line == line:
+        return line_change_cost
+    return 2 * line_change_cost
+
+
 @calculate_running_time
 def astar(
     graph: MyGraph,
@@ -35,14 +51,20 @@ def astar(
     line_change_cost: int = 250,
     max_workers: int = 4,
 ) -> list[Connection]:
+    print("Opt changes: ", opt_changes)
     if start == end:
         return []
+
+    priority_lines: set = set(
+        [c["data"].line for _, _, c in graph.in_edges(end, data=True)]
+    )
+    print("Priority lines: ", priority_lines)
 
     queue = PriorityQueue[str]()
     queue.put(start, 0)
 
     path = {start: None}
-    g_score = {start: heuristic(graph.nodes[start]["data"], graph.nodes[end]["data"])}
+    g_score = {start: 0}
     arrival_times = {start: start_time}
     lines = {start: None}
 
@@ -64,7 +86,9 @@ def astar(
                 line=current_line,
                 line_change_cost=line_change_cost,
                 opt_changes=opt_changes,
+                priority_lines=priority_lines,
             )
+
             if connection is None:
                 continue
 
@@ -76,7 +100,14 @@ def astar(
                 lines[neighbour] = connection.line
                 g_score[neighbour] = tentative_g_score
                 current_pos = graph.nodes[current]["data"]
-                f_score = tentative_g_score + heuristic(current_pos, end_pos)
+                heuristic_cost = (
+                    heuristic(current_pos, end_pos)
+                    if not opt_changes
+                    else line_heuristic(
+                        connection.line, priority_lines, current_line, line_change_cost
+                    )
+                )
+                f_score = tentative_g_score + heuristic_cost
                 queue.put(neighbour, f_score)
 
     graph.reset_visited()
