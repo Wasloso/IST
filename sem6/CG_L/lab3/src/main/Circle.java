@@ -1,11 +1,7 @@
 package main;
 
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class Circle extends Shape {
     public int radius;

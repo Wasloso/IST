@@ -32,7 +32,7 @@ public abstract class Shape {
 
     public String serialize() {
         return String.format("%s %d %d %d %d %d %d %d",
-                getClass().getSimpleName().toUpperCase(),
+                ShapeType.fromShape(this).toString(),
                 start.x, start.y, end.x, end.y,
                 color.getRed(), color.getGreen(), color.getBlue());
     }
@@ -79,7 +79,7 @@ public abstract class Shape {
             case CIRCLE -> new Circle(start, end, r, g, b);
             case RECTANGLE -> new Rectangle(start, end, r, g, b);
             case LINE -> new Line(start, end, r, g, b);
-            default -> throw new IllegalArgumentException("Unsupported shape type");
+            default -> throw new InvalidParameterException("Unsupported shape type");
         };
     }
 

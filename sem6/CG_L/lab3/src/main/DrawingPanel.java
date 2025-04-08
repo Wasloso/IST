@@ -4,15 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
-import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.function.Consumer;
-import java.util.function.Function;
-
 import javax.swing.JPanel;
 
 class DrawingPanel extends JPanel {
@@ -42,7 +38,7 @@ class DrawingPanel extends JPanel {
                     selectedShape = shape;
                     return;
                 }
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1 && newShape == null) {
                     newShape = createNewShape(startPoint);
                 }
             }
@@ -132,7 +128,7 @@ class DrawingPanel extends JPanel {
         if (point.distance(shape.getStart()) <= sensitivity && shape instanceof Line) {
             return SelectedPoint.START;
         }
-        if (point.distance(shape.getEnd()) <= sensitivity && shape instanceof Line) {
+        if (point.distance(shape.getEnd()) <= sensitivity) {
             return SelectedPoint.END;
         }
         return SelectedPoint.NONE;
