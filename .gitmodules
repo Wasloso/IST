@@ -10,3 +10,6 @@
 [submodule "sem6/CE_L/uni-SPA-JS"]
 	path = sem6/CE_L/uni-SPA-JS
 	url = https://github.com/Wasloso/uni-SPA-JS.git
+[submodule "sem6/CE_L/uni-PWA-JS"]
+	path = sem6/CE_L/uni-PWA-JS
+	url = https://github.com/Wasloso/uni-PWA-JS
