@@ -10,6 +10,7 @@ import java.awt.geom.Rectangle2D;
 public class ShapeElement extends PosterElement {
     private Color color;
     private Shape shape;
+    private Shape transformedShape;
     public ShapeElement(Color color, Shape shape) {
         this.color = color;
         this.shape = shape;
@@ -71,5 +72,6 @@ public class ShapeElement extends PosterElement {
     public void setColor(Color color) {
         this.color = color;
     }
+
     
 }

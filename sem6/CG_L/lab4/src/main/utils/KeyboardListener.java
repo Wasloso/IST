@@ -12,10 +12,12 @@ public class KeyboardListener implements KeyListener {
     private List<Runnable> callbacks;
     private Runnable moveUpCallback;
     private Runnable moveDownCallback;
+    private Runnable addTextCallback;
     public KeyboardListener() {
         this.selectedElement = null;
         this.callbacks = new ArrayList<>();
     }
+
 
     private void moveLeft() { selectedElement.move(-1, 0); runCallbacks(); }
     private void moveRight() { selectedElement.move(1, 0);  runCallbacks();}
@@ -38,6 +40,12 @@ public class KeyboardListener implements KeyListener {
     }
     @Override
     public void keyPressed(KeyEvent e) {
+        if(  e.getKeyCode() == KeyEvent.VK_T) {
+            if (addTextCallback != null) {
+                addTextCallback.run();
+            }
+        }
+       
         if (selectedElement == null) return; 
         switch (e.getKeyCode()) {
             case KeyEvent.VK_LEFT:
@@ -78,8 +86,9 @@ public class KeyboardListener implements KeyListener {
                     moveDownCallback.run();
                 }
                 break;
+
             
-            
+        
 
         }
     }
@@ -96,5 +105,9 @@ public class KeyboardListener implements KeyListener {
     }
     public void setMoveDownCallback(Runnable moveDownCallback) {
         this.moveDownCallback = moveDownCallback;
+    }
+
+    public void setAddTextCallback(Runnable addTextCallback) {
+        this.addTextCallback = addTextCallback;
     }
 }

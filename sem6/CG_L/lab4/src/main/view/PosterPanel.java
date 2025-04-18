@@ -10,6 +10,7 @@ import java.util.List;
 
 import main.model.PosterElement;
 import main.model.SelectedVertex;
+import main.model.TextElement;
 import main.utils.KeyboardListener;
 
 public class PosterPanel extends JPanel {
@@ -90,6 +91,7 @@ public class PosterPanel extends JPanel {
     private KeyboardListener setupKeyboardListener() {
         KeyboardListener listener = new KeyboardListener();
         listener.addCallback(this::repaint);
+        listener.setAddTextCallback(() -> addText());
         listener.setMoveUpCallback(() -> moveElementUp(selectedElement));
         listener.setMoveDownCallback(() -> moveElementDown(selectedElement));
         return listener;
@@ -236,5 +238,15 @@ public class PosterPanel extends JPanel {
         for (PosterElement el : elements) {
             el.draw(g2d);
         }
+    }
+
+    public void addText(){
+        String text = JOptionPane.showInputDialog(this, "Enter text:", "Add Text", JOptionPane.PLAIN_MESSAGE);
+        if (text != null && !text.trim().isEmpty()) {
+            PosterElement textElement = new TextElement(text);
+            addElement(textElement);
+            setSelectedElement(textElement);
+        }
+
     }
 }

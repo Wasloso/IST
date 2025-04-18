@@ -126,6 +126,7 @@ public class MenuPanel extends JMenuBar {
             String path = ensureExtension(fileChooser.getSelectedFile(), ".poster");
             try (PrintWriter writer = new PrintWriter(path)) {
                 for (PosterElement element : elements) {
+                    if(element instanceof TextElement) continue;
                     writer.println(element.serialize());
                 }
                 showMessage("Elements saved successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);

@@ -34,8 +34,6 @@ public class ImageElement extends PosterElement {
             BufferedImage image = getImage(); 
             g2d.drawImage(image, transform, null);
             drawSelected(g2d);
-
-       
     }
 
     @Override
@@ -43,7 +41,7 @@ public class ImageElement extends PosterElement {
         try {
             AffineTransform inverse = transform.createInverse();
             Point2D local = inverse.transform(p, null);
-            BufferedImage image = getImage(); // Get the image dimensions
+            BufferedImage image = getImage(); 
             Rectangle imageBounds = new Rectangle(0, 0, image.getWidth(), image.getHeight());
             return imageBounds.contains(local);
         } catch (NoninvertibleTransformException e) {

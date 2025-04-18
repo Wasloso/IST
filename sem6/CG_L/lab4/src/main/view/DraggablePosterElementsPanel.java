@@ -1,7 +1,6 @@
 package main.view;
 
 import main.controller.DragDropController;
-import main.model.ImageElement;
 import main.model.PosterElement;
 
 import javax.swing.*;

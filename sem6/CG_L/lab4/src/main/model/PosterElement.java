@@ -82,12 +82,10 @@ public abstract class PosterElement {
     public void rotate(double angle) {
         double cx = center.getX();
         double cy = center.getY();
-
         AffineTransform rotate = new AffineTransform();
         rotate.translate(cx, cy);
         rotate.rotate(angle);
         rotate.translate(-cx, -cy);
-
         rotate.concatenate(transform);
         transform = rotate;
         setVertices();
@@ -96,12 +94,10 @@ public abstract class PosterElement {
     public void scale(double sx, double sy) {
         double cx = center.getX();
         double cy = center.getY();
-    
         AffineTransform scaleTransform = new AffineTransform();
         scaleTransform.translate(cx, cy);
         scaleTransform.scale(sx, sy);
         scaleTransform.translate(-cx, -cy);
-    
         scaleTransform.concatenate(transform);
         transform = scaleTransform;
         setVertices();
@@ -130,11 +126,7 @@ public abstract class PosterElement {
     }
     public void drawSelected(Graphics2D g2d) {
         if (!isSelected) return;
-
-        
         g2d.setColor(Color.ORANGE);
-
-        
         for (Point2D pt : this.vertices) {
             drawHandle(g2d, pt);
         }
@@ -190,13 +182,10 @@ public abstract class PosterElement {
         scaleTransform.translate(anchor.getX(), anchor.getY());
         scaleTransform.scale(sx, sy);
         scaleTransform.translate(-anchor.getX(), -anchor.getY());
-    
         scaleTransform.concatenate(transform);
         transform = scaleTransform;
         setVertices();
         setCenter();
     }
-
-
 
 }

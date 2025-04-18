@@ -2,3 +2,4 @@ images/
 !.vscode/
 bin/
 *.poster
+lib/
