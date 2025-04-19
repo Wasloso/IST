@@ -2,7 +2,8 @@ package main;
 
 import java.awt.Color;
 import java.awt.Point;
-import java.awt.geom.Point2D;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Triangle {
     Vertex v1;
@@ -29,4 +30,5 @@ public class Triangle {
             this.color = color;
         }
     }
+
 }

@@ -1,10 +1,15 @@
 package main;
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
 
 public class GouraudShader {
 
-    public void shade(Triangle triangle, Drawer drawer) {
+    public static void shade(Triangle triangle, BufferedImage image) {
+        shade(triangle, new BufferedImageDrawer(image));
+    }
+
+    public static void shade(Triangle triangle, DrawingCallback drawer) {
         Triangle.Vertex[] sortedVertices = sortVertices(triangle);
         Triangle.Vertex top = sortedVertices[0];
         Triangle.Vertex middle = sortedVertices[1];
@@ -35,7 +40,7 @@ public class GouraudShader {
 
     }
 
-    private void scanLine(int y, double xl, double xr, Color cl, Color cr, Drawer drawer) {
+    private static void scanLine(int y, double xl, double xr, Color cl, Color cr, DrawingCallback drawer) {
         if (xl > xr) {
             double tempX = xl;
             xl = xr;
@@ -52,13 +57,13 @@ public class GouraudShader {
         }
     }
 
-    private Triangle.Vertex[] sortVertices(Triangle triangle) {
+    private static Triangle.Vertex[] sortVertices(Triangle triangle) {
         Triangle.Vertex[] verts = { triangle.v1, triangle.v2, triangle.v3 };
         java.util.Arrays.sort(verts, (a, b) -> Double.compare(a.point.getY(), b.point.getY()));
         return verts;
     }
 
-    private Color interpolateColor(double ratio, Color c1, Color c2) {
+    private static Color interpolateColor(double ratio, Color c1, Color c2) {
         int r = (int) interpolate(ratio, c1.getRed(), c2.getRed());
         int g = (int) interpolate(ratio, c1.getGreen(), c2.getGreen());
         int b = (int) interpolate(ratio, c1.getBlue(), c2.getBlue());
@@ -68,11 +73,11 @@ public class GouraudShader {
                 Math.max(0, Math.min(255, b)));
     }
 
-    private double interpolate(double ratio, double a, double b) {
+    private static double interpolate(double ratio, double a, double b) {
         return a + ratio * (b - a);
     }
 
-    private double getRatio(double value, double start, double end) {
+    private static double getRatio(double value, double start, double end) {
         if (start == end)
             return 0;
         return (value - start) / (end - start);
