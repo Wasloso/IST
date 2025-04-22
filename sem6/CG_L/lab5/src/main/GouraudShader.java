@@ -5,11 +5,12 @@ import java.awt.image.BufferedImage;
 
 public class GouraudShader {
 
-    public static void shade(Triangle triangle, BufferedImage image) {
-        shade(triangle, new BufferedImageDrawer(image));
+    public static int shade(Triangle triangle, BufferedImage image) {
+        return shade(triangle, new BufferedImageDrawer(image));
     }
 
-    public static void shade(Triangle triangle, DrawingCallback drawer) {
+    public static int shade(Triangle triangle, DrawingCallback drawer) {
+        int pixelsDrawn = 0;
         Triangle.Vertex[] sortedVertices = sortVertices(triangle);
         Triangle.Vertex top = sortedVertices[0];
         Triangle.Vertex middle = sortedVertices[1];
@@ -35,12 +36,12 @@ public class GouraudShader {
             betaR = getRatio(y, yu, yb);
             xr = interpolate(betaR, top.point.getX(), bottom.point.getX());
             cr = interpolateColor(betaR, top.color, bottom.color);
-            scanLine(y, xl, xr, cl, cr, drawer);
+            pixelsDrawn += scanLine(y, xl, xr, cl, cr, drawer);
         }
-
+        return pixelsDrawn;
     }
 
-    private static void scanLine(int y, double xl, double xr, Color cl, Color cr, DrawingCallback drawer) {
+    private static int scanLine(int y, double xl, double xr, Color cl, Color cr, DrawingCallback drawer) {
         if (xl > xr) {
             double tempX = xl;
             xl = xr;
@@ -55,6 +56,8 @@ public class GouraudShader {
             Color color = interpolateColor(alphaX, cl, cr);
             drawer.draw(x, y, color);
         }
+        int pixelsDrawn = (int) (xr - xl);
+        return pixelsDrawn;
     }
 
     private static Triangle.Vertex[] sortVertices(Triangle triangle) {

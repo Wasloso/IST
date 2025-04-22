@@ -13,11 +13,13 @@ public class AppWindow extends JFrame {
     private int width;
     private int height;
     public TrianglesPanel appPanel;
+    private Triangle triangleToDraw;
 
     public AppWindow(int width, int height) {
         this.width = width;
         this.height = height;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
         setSize(width, height);
         setVisible(true);
         appPanel = new TrianglesPanel();
@@ -46,18 +48,28 @@ public class AppWindow extends JFrame {
             }
         }
 
-        public void addTriangle(Triangle triangle) {
+        public int addTriangle(Triangle triangle) {
             triangles.add(triangle);
-            revalidate();
-            repaint();
+            return drawTriangle(triangle);
         }
+
+        private int drawTriangle(Triangle triangle) {
+            Graphics2D g2d = (Graphics2D) getGraphics();
+            return GouraudShader.shade(triangle, (x, y, color) -> {
+                g2d.setColor(color);
+                g2d.fillRect(x, y, 1, 1);
+            });
+        }
+
     }
 
     public static void main(String[] args) {
+
         SwingUtilities.invokeLater(() -> {
             AppWindow window = new AppWindow(800, 600);
 
-            for (Triangle triangle : Utils.generateTestTriangles(150)) {
+            for (Triangle triangle : Utils.generateTestTriangles(125)) {
+
                 window.appPanel.addTriangle(triangle);
             }
         });

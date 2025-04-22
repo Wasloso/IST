@@ -1,11 +1,24 @@
 package main;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Utils {
+
+    public static Triangle generateRandomTriangle(Dimension bounds) {
+        return new Triangle(generateRandomVertex(bounds), generateRandomVertex(bounds), generateRandomVertex(bounds));
+
+    }
+
+    private static Triangle.Vertex generateRandomVertex(Dimension bounds) {
+        return new Triangle.Vertex(
+                (int) (Math.random() * bounds.getWidth()),
+                (int) (Math.random() * bounds.getHeight()),
+                randomColor());
+    }
 
     public static Triangle[] generateTestTriangles(int size) {
         int offset = 20;
