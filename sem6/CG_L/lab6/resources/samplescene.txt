@@ -1,0 +1,47 @@
+# Resolution (width height)
+800 600
+
+# Output filename
+output.png
+
+# Ambient light (AR AG AB)
+0.1 0.1 0.5
+
+# Sphere center (x y z)
+0.0 2.0 10.0
+
+# Sphere radius
+2.0
+
+# Self luminance (SR SG SB)
+0.0 0.0 0.3
+
+# Material ambient (kaR kaG kaB)
+0.2 0.6 0.2
+
+# Material diffuse (kdR kdG kdB)
+0.7 0.1 0.7
+
+# Material specular (ksR ksG ksB)
+0.1 0.5 0.5
+
+# Material shininess
+32.0
+
+# Attenuation constants (c0 c1 c2)
+1.0 0.1 0.01
+
+# Number of light sources
+2
+
+# Light 1 position (x y z)
+-3.0 3.0 2.0
+
+# Light 1 intensity (ER EG EB)
+0.8 0.8 0.8
+
+# Light 2 position (x y z)
+3.0 3.0 2.0
+
+# Light 2 intensity (ER EG EB)
+0.8 0.8 0.8

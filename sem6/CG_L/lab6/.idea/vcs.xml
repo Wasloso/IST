@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../sem5/DataBases_P/DatabaseDataFaker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../sem5/DataBases_P/mongodb_datafaker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../CE_L/uni-PWA-JS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../CE_L/uni-SPA-JS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../uni-cloud-development" vcs="Git" />
+  </component>
+</project>
