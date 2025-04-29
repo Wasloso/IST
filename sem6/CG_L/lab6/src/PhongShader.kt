@@ -38,17 +38,15 @@ class PhongShader(attenuation: Vec3) {
         val (width, height) = scene.resolution
         val imageOutput = BufferedImage(width,height, BufferedImage.TYPE_INT_RGB)
         val sphere: Sphere = scene.sphere
-        val material = sphere.material
         val invWidth = 1.0 / width
         val invHeight = 1.0 / height
         val viewDir = Vec3(0.0,0.0,1.0)
         val r = sphere.radius
-        val rPow = r*r
         for(i in 0 until height){
             val y = r*(1-2.0*i*invHeight)
             for(j in 0 until width){
                 val x = r*(2.0*j*invWidth-1)
-                val color = calculatePixel(x, y, rPow, material,scene.ambient, scene.lights,viewDir)
+                val color = calculatePixel(x, y, sphere, scene.ambient,scene.lights,viewDir)
                 imageOutput.setRGB(j,i,color)
             }
         }
@@ -58,28 +56,35 @@ class PhongShader(attenuation: Vec3) {
     private fun calculatePixel(
         x: Double,
         y: Double,
-        rPow: Double,
-        material: Material,
+        sphere: Sphere,
         ambient: Vec3,
         lights: List<Light>,
         viewDir: Vec3
     ): Int {
+        val rPow = sphere.radius * sphere.radius
         val x2 = x.pow(2)
         val y2 = y.pow(2)
         if (x2 + y2 > rPow) return Color.BLACK.rgb
+
         val z = sqrt(rPow - x2 - y2)
-        val point = Vec3(x, y, z)
-        val normal = point.normalize()
-        var color: Vec3 = material.selfLuminance + material.ka * ambient
+        val localPoint = Vec3(x, y, z)
+        val point = localPoint + sphere.center
+        val normal = (point - sphere.center).normalize()
+        var color: Vec3 = sphere.material.selfLuminance + sphere.material.ka * ambient
+
         lights.forEach { light ->
             val lightDir = (light.position - point).normalize()
-            val reflectDir = (normal * 2.0 * normal.dot(lightDir) - lightDir)
-            val diffuse = material.kd * light.intensity * max(normal.dot(lightDir), 0.0)
-            val specular = material.ks * light.intensity * max(viewDir.dot(reflectDir), 0.0).pow(material.shininess)
+            val ndotl = normal.dot(lightDir)
+            if (ndotl < 0.0) return@forEach
+            val reflectDir = (normal * 2.0 * ndotl - lightDir)
+            val diffuse = sphere.material.kd * light.intensity * ndotl
+            val specular = sphere.material.ks * light.intensity *
+                    max(viewDir.dot(reflectDir), 0.0).pow(sphere.material.shininess)
             color += (diffuse + specular) * fAtt((light.position - point).length())
         }
         return toColorInt(color)
     }
+
 
     fun toColorInt(color: Vec3): Int {
         return color
@@ -114,7 +119,7 @@ class PhongShader(attenuation: Vec3) {
                 val y = r * (1 - 2.0 * i * invHeight)
                 for (j in 0 until width) {
                     val x = r * (2.0 * j * invWidth - 1)
-                    val color = calculatePixel(x, y, rPow, material, scene.ambient, scene.lights, viewDir)
+                    val color = calculatePixel(x, y, sphere, scene.ambient,scene.lights,viewDir)
                     chunkImage.setRGB(j, i - startRow, color)
                 }
             }
