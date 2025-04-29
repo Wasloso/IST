@@ -14,4 +14,11 @@ data class Vec3(val x: Double, val y: Double, val z: Double){
     }
     fun length() = sqrt(this.dot(this))
     fun clamp(max: Double = 1.0) = Vec3(x.coerceIn(0.0, max), y.coerceIn(0.0, max), z.coerceIn(0.0, max))
+
+    companion object {
+        fun fromString(line: String): Vec3 {
+            val parts = line.split(":")[1].trim().split(" ")
+            return Vec3(parts[0].toDouble(), parts[1].toDouble(), parts[2].toDouble())
+        }
+    }
 }

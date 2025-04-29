@@ -24,15 +24,30 @@ class PhongShader(attenuation: Vec3) {
 
     fun shade(scene: Scene): BufferedImage {
         val (width, height) = scene.resolution
+
+        val useParallel = width * height >= 1_000_000
+
+        return if (useParallel) {
+            // according to tests renders 2x faster when image is big enough
+            shadeParallel(scene)
+        } else {
+            shadeSerial(scene)
+        }
+    }
+    fun shadeSerial(scene: Scene): BufferedImage {
+        val (width, height) = scene.resolution
         val imageOutput = BufferedImage(width,height, BufferedImage.TYPE_INT_RGB)
         val sphere: Sphere = scene.sphere
         val material = sphere.material
+        val invWidth = 1.0 / width
+        val invHeight = 1.0 / height
         val viewDir = Vec3(0.0,0.0,1.0)
         val r = sphere.radius
         val rPow = r*r
         for(i in 0 until height){
+            val y = r*(1-2.0*i*invHeight)
             for(j in 0 until width){
-                val (x,y) = toWorldPosition(r, i, height, j, width)
+                val x = r*(2.0*j*invWidth-1)
                 val color = calculatePixel(x, y, rPow, material,scene.ambient, scene.lights,viewDir)
                 imageOutput.setRGB(j,i,color)
             }
@@ -49,10 +64,10 @@ class PhongShader(attenuation: Vec3) {
         lights: List<Light>,
         viewDir: Vec3
     ): Int {
-        if (x.pow(2) + y.pow(2) > rPow) {
-            return Color.BLACK.rgb
-        }
-        val z = sqrt(rPow - x.pow(2) - y.pow(2))
+        val x2 = x.pow(2)
+        val y2 = y.pow(2)
+        if (x2 + y2 > rPow) return Color.BLACK.rgb
+        val z = sqrt(rPow - x2 - y2)
         val point = Vec3(x, y, z)
         val normal = point.normalize()
         var color: Vec3 = material.selfLuminance + material.ka * ambient
@@ -66,23 +81,59 @@ class PhongShader(attenuation: Vec3) {
         return toColorInt(color)
     }
 
-    private fun toWorldPosition(
-        r: Double,
-        i: Int,
-        height: Int,
-        j: Int,
-        width: Int
-    ): Pair<Double, Double> {
-        val y = r * (1 - 2.0 * i / height)
-        val x = r * (2.0 * j / width - 1)
-        return Pair(x, y)
-    }
-
     fun toColorInt(color: Vec3): Int {
         return color
             .clamp(255.0)
             .let { (r, g, b) -> Color((r).toInt(), (g).toInt(), (b).toInt()).rgb }
     }
+
+    fun shadeParallel(scene: Scene): BufferedImage {
+        val (width, height) = scene.resolution
+        val imageOutput = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
+        val sphere: Sphere = scene.sphere
+        val material = sphere.material
+        val invWidth = 1.0 / width
+        val invHeight = 1.0 / height
+        val viewDir = Vec3(0.0, 0.0, 1.0)
+        val r = sphere.radius
+        val rPow = r * r
+
+        val chunkSize = 50
+
+        val chunkImages = mutableListOf<BufferedImage>()
+        for (startRow in 0 until height step chunkSize) {
+            val chunkHeight = minOf(chunkSize, height - startRow)
+            val chunkImage = BufferedImage(width, chunkHeight, BufferedImage.TYPE_INT_RGB)
+            chunkImages.add(chunkImage)
+        }
+        (0 until height step chunkSize).toList().parallelStream().forEach { startRow ->
+            val endRow = minOf(startRow + chunkSize, height)
+            val chunkImage = chunkImages[startRow / chunkSize]
+
+            for (i in startRow until endRow) {
+                val y = r * (1 - 2.0 * i * invHeight)
+                for (j in 0 until width) {
+                    val x = r * (2.0 * j * invWidth - 1)
+                    val color = calculatePixel(x, y, rPow, material, scene.ambient, scene.lights, viewDir)
+                    chunkImage.setRGB(j, i - startRow, color)
+                }
+            }
+        }
+
+        for (index in chunkImages.indices) {
+            val chunkImage = chunkImages[index]
+            val yOffset = index * chunkSize
+            for (i in 0 until chunkImage.height) {
+                for (j in 0 until chunkImage.width) {
+                    val color = chunkImage.getRGB(j, i)
+                    imageOutput.setRGB(j, i + yOffset, color)
+                }
+            }
+        }
+
+        return imageOutput
+    }
+
 
 
 
