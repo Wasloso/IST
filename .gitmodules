@@ -16,3 +16,9 @@
 [submodule "sem6/GP_L/uni-MushroomHunt"]
 	path = sem6/GP_L/uni-MushroomHunt
 	url = https://github.com/Wasloso/uni-MushroomHunt.git
+[submodule "sem6/GP_L/uni-Minesweeper"]
+	path = sem6/GP_L/uni-Minesweeper
+	url = https://github.com/Wasloso/uni-Minesweeper
+[submodule "sem6/GP_L/uni-RatCatcher"]
+	path = sem6/GP_L/uni-RatCatcher
+	url = https://github.com/Wasloso/uni-RatCatcher
