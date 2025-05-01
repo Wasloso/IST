@@ -13,3 +13,6 @@
 [submodule "sem6/CE_L/uni-PWA-JS"]
 	path = sem6/CE_L/uni-PWA-JS
 	url = https://github.com/Wasloso/uni-PWA-JS
+[submodule "sem6/GP_L/uni-MushroomHunt"]
+	path = sem6/GP_L/uni-MushroomHunt
+	url = https://github.com/Wasloso/uni-MushroomHunt.git
