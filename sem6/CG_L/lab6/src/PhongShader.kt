@@ -25,14 +25,11 @@ class PhongShader(attenuation: Vec3) {
     fun shade(scene: Scene): BufferedImage {
         val (width, height) = scene.resolution
 
-        val useParallel = width * height >= 1_000_000
-
-        return if (useParallel) {
-            // according to tests renders 2x faster when image is big enough
-            shadeParallel(scene)
-        } else {
-            shadeSerial(scene)
+        return when(width * height >= 1_000_000){
+            true -> shadeParallel(scene)
+            false -> shadeSerial(scene)
         }
+
     }
     fun shadeSerial(scene: Scene): BufferedImage {
         val (width, height) = scene.resolution
@@ -65,7 +62,6 @@ class PhongShader(attenuation: Vec3) {
         val x2 = x.pow(2)
         val y2 = y.pow(2)
         if (x2 + y2 > rPow) return Color.BLACK.rgb
-
         val z = sqrt(rPow - x2 - y2)
         val localPoint = Vec3(x, y, z)
         val point = localPoint + sphere.center
@@ -75,8 +71,8 @@ class PhongShader(attenuation: Vec3) {
         lights.forEach { light ->
             val lightDir = (light.position - point).normalize()
             val ndotl = normal.dot(lightDir)
-            if (ndotl < 0.0) return@forEach
             val reflectDir = (normal * 2.0 * ndotl - lightDir)
+
             val diffuse = sphere.material.kd * light.intensity * ndotl
             val specular = sphere.material.ks * light.intensity *
                     max(viewDir.dot(reflectDir), 0.0).pow(sphere.material.shininess)
@@ -84,7 +80,6 @@ class PhongShader(attenuation: Vec3) {
         }
         return toColorInt(color)
     }
-
 
     fun toColorInt(color: Vec3): Int {
         return color
@@ -96,12 +91,10 @@ class PhongShader(attenuation: Vec3) {
         val (width, height) = scene.resolution
         val imageOutput = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
         val sphere: Sphere = scene.sphere
-        val material = sphere.material
         val invWidth = 1.0 / width
         val invHeight = 1.0 / height
         val viewDir = Vec3(0.0, 0.0, 1.0)
         val r = sphere.radius
-        val rPow = r * r
 
         val chunkSize = 50
 
@@ -135,12 +128,6 @@ class PhongShader(attenuation: Vec3) {
                 }
             }
         }
-
         return imageOutput
     }
-
-
-
-
-
 }
