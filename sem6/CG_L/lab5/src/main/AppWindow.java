@@ -39,26 +39,32 @@ public class AppWindow extends JFrame {
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-            Graphics2D g2d = (Graphics2D) g;
             for (Triangle triangle : triangles) {
-                GouraudShader.shade(triangle, (x, y, color) -> {
-                    g2d.setColor(color);
-                    g2d.fillRect(x, y, 1, 1);
-                });
+                shadeTriangle(triangle, g);
             }
         }
 
         public int addTriangle(Triangle triangle) {
             triangles.add(triangle);
-            return drawTriangle(triangle);
+            return shadeTriangle(triangle, null);
         }
 
-        private int drawTriangle(Triangle triangle) {
-            Graphics2D g2d = (Graphics2D) getGraphics();
+        private int shadeTriangle(Triangle triangle, Graphics g) {
+            Graphics G;
+            if (g == null) {
+                G = getGraphics();
+            } else {
+                G = g;
+            }
             return GouraudShader.shade(triangle, (x, y, color) -> {
-                g2d.setColor(color);
-                g2d.fillRect(x, y, 1, 1);
+                G.setColor(color);
+                G.fillRect(x, y, 1, 1);
             });
+        }
+
+        public void clearTriangles() {
+            triangles.clear();
+            repaint();
         }
 
     }
