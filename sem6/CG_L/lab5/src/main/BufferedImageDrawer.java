@@ -2,6 +2,7 @@ package main;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
 import java.io.File;
 import java.io.IOException;
 
@@ -9,16 +10,18 @@ import javax.imageio.ImageIO;
 
 public class BufferedImageDrawer implements DrawingCallback {
     private BufferedImage image;
+    private int[] pixels;
 
     @Override
     public void draw(int x, int y, Color color) {
         if (x >= 0 && x < image.getWidth() && y >= 0 && y < image.getHeight()) {
-            image.setRGB(x, y, color.getRGB());
+            pixels[y * image.getWidth() + x] = color.getRGB();
         }
     }
 
     public BufferedImageDrawer(BufferedImage image) {
         this.image = image;
+        this.pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
     }
 
     public static void main(String[] args) {

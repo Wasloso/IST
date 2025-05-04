@@ -50,14 +50,15 @@ public class GouraudShader {
             cl = cr;
             cr = tempC;
         }
+        int x_l = (int) xl;
 
-        for (int x = (int) xl; x <= (int) xr; x++) {
+        for (int x = x_l; x <= xr; x++) {
             double alphaX = getRatio(x, xl, xr);
             Color color = interpolateColor(alphaX, cl, cr);
             drawer.draw(x, y, color);
         }
-        int pixelsDrawn = (int) (xr - xl);
-        return pixelsDrawn;
+        return (int) (xr - xl);
+
     }
 
     private static Triangle.Vertex[] sortVertices(Triangle triangle) {
