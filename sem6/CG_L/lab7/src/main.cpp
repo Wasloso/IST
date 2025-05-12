@@ -6,8 +6,9 @@ float angle = 0.0f;
 
 const GLfloat white[] = {1.0f, 1.0f, 1.0f};
 const GLfloat black[] = {0.0f, 0.0f, 0.0f};
-const int boardSize = 8;
+const int boardSize = 7;
 GLuint boardList;
+
 struct Field
 {
     static constexpr float size = 1.0f;
@@ -30,7 +31,7 @@ struct Field
 
 struct Piece
 {
-    static constexpr float size = 0.5f;
+    static constexpr float size = 0.6f;
     static constexpr GLfloat specular[] = {0.1f, 0.1f, 0.1f, 1.0f};
     static constexpr GLfloat shininess = 50.0f;
 
@@ -44,9 +45,10 @@ struct Piece
         glMaterialf(GL_FRONT, GL_SHININESS, shininess);
         for (int i = 0; i < 3; i++)
         {
+            float scale = size * (1.0f - i * 0.2f);
             glPushMatrix();
             glTranslatef(0.0f, i * 0.3f, 0.0f);
-            glScalef(1.0f, 0.5f, 1.0f);
+            glScalef(1.0f * scale, 0.5f, 1.0f * scale);
             glutSolidSphere(size, 16, 16);
             glPopMatrix();
         }
@@ -60,15 +62,19 @@ struct Board
     static void draw(int size)
     {
         std::cout << "Drawing board of size: " << size << std::endl;
+        float offset = size / 2.0f - 0.5f;
         for (int x = 0; x < size; x++)
         {
             for (int z = 0; z < size; z++)
             {
                 bool isWhite = (x + z) % 2 == 0;
-                float posX = (x - size / 2) * Field::size;
-                float posZ = (z - size / 2) * Field::size;
+                float posX = (x - offset) * Field::size;
+                float posZ = (z - offset) * Field::size;
                 float posY = Field::size * Field::y_scale;
-
+                if ((x == 0 && z == 0) || (x == size - 1 && z == size - 1))
+                {
+                    std::cout << "posX: " << posX << ", posZ: " << posZ << std::endl;
+                }
                 Field::draw(isWhite, posX, 0.0f, posZ);
                 if (z < 2)
                 {
@@ -82,6 +88,16 @@ struct Board
         }
     }
 };
+void drawVerticalLine()
+{
+    glPushMatrix();
+    glBegin(GL_LINES);
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glVertex3f(0.0f, -5.0f, -0.0f);
+    glVertex3f(-0.0f, 5.0f, -0.0f);
+    glEnd();
+    glPopMatrix();
+}
 
 void setupLights()
 {
@@ -126,6 +142,7 @@ void display()
     glLoadIdentity();
     setupCamera();
     setupLights();
+    // drawVerticalLine();
 
     glCallList(boardList);
     glutSwapBuffers();
